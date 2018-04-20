@@ -2,14 +2,19 @@
   <div id="app">
     <!-- <router-view/> -->
     <TopBar/>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import TopBar from "@/components/TopBar"
+import cssReset from "../static/css/reset.css"
+import Footer from "./components/Footer"
 export default {
   name: 'App',
-  components:{TopBar}
+  components:{TopBar,Footer},
+  mounted(){
+  }
 }
 </script>
 
@@ -21,9 +26,16 @@ export default {
   text-align: center;
   /* color: #2c3e50;
   margin-top: 60px; */
-  font-size :14px;
-  width:50rem;
-  border:1px solid ;
-  color:#FF6B00;
+  font-size :.14rem;
+  width:100%;
+  /* border:1px solid ; */
+  /* color:#FF6B00; */
+  /* position: relative; */
+}
+.icon {
+  width: 0.5rem; height: 0.5rem;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 </style>
