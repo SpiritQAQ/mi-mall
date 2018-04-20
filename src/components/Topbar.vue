@@ -43,7 +43,10 @@
 
 <style lang='scss'>
   .top-bar{
-    border-bottom: 1px solid #ccc;
+    // position:fixed;
+    width:100%;
+    z-index:3;
+    background-color: #fff;
     .loading-bar{
       height:2px;
       content:'';

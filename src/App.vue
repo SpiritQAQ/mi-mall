@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <!-- <router-view/> -->
-    <TopBar/>
+
+    <PageMain/> 
     <Footer/>
   </div>
 </template>
@@ -10,9 +11,10 @@
 import TopBar from "@/components/TopBar"
 import cssReset from "../static/css/reset.css"
 import Footer from "./components/Footer"
+import PageMain from './components/PageMain'
 export default {
   name: 'App',
-  components:{TopBar,Footer},
+  components:{TopBar,Footer,PageMain},
   mounted(){
   }
 }
@@ -24,10 +26,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  
   /* color: #2c3e50;
   margin-top: 60px; */
   font-size :.14rem;
   width:100%;
+  height:100%;
+  overflow: auto;
   /* border:1px solid ; */
   /* color:#FF6B00; */
   /* position: relative; */
@@ -38,4 +43,5 @@ export default {
   fill: currentColor;
   overflow: hidden;
 }
+::-webkit-scrollbar {display:none}
 </style>

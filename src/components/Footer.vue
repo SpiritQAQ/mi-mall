@@ -55,6 +55,8 @@
 
 <style lang="scss">
   footer{
+    z-index:10;
+    background-color: #fff;
     position:fixed;
     bottom:0;
     left:0;
