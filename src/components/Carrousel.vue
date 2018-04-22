@@ -1,15 +1,40 @@
 <template>
   <div class="carrousel-container">
   <swiper :options="swiperOption" ref="mySwiper" @transitionEnd = "changeTab">
-    <!-- slides -->
+
     <swiper-slide>
-      <!-- <swiper :option="swiper2" ref="miniSwiper">
-        <swiper-slide v-for="item in carrousel1">
-          <div class="carrsoule-img-box"><a><img v-bind:src="item.src" alt=""></a></div>
-        </swiper-slide>
-        <div class="swiper-pagination" ref="pagination" slot="pagination"></div>
-      </swiper>  -->
       <SmallCarrousel :page="1"/>
+      <div class="img-row clear png4">
+        <a href="javascript:;">
+          <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022292984819.png" alt=""></a>
+        <a href="javascript:;">
+          <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022292372054.png" alt=""></a>
+        <a href="javascript:;">
+          <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022291629252.png" alt=""></a>
+        <a href="javascript:;">
+          <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022290460400.png" alt=""></a>
+      </div>
+      <div class="img-rowclear">
+        <img class= "fleft" src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011114551289342.png" alt="">
+        <img class = "fright" src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e2ad0dbf777fda097e55cea9ce716e33.jpg?thumb=1&w=358&h=252" alt="">
+        <img class = "fright" src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011114550596671.png" alt="">
+      </div>
+      <div class="img-rowclear">
+        <a href=""><img src="" alt=""></a>
+        <a href=""><img src="" alt=""></a>
+        <a href=""><img src="" alt=""></a>
+      </div>
+      <div class="img-rowclear">
+        <a href=""><img src="" alt=""></a>
+        <a href=""><img src="" alt=""></a>
+        <a href=""><img src="" alt=""></a>
+      </div>
+      <div class="img-row clear">
+        <a href=""><img src="" alt=""></a>
+        <a href=""><img src="" alt=""></a>
+        <a href=""><img src="" alt=""></a>
+      </div>
+      <div class="img-row"></div>
     </swiper-slide>
     <swiper-slide>
       <SmallCarrousel :page="2"/>
@@ -57,7 +82,7 @@ export default {
           direction : 'horizontal',
           grabCursor : true,
           setWrapperSize :true,
-          autoHeight: true,
+          // autoHeight: true,
           mousewheelControl : false,
           observeParents:true,
           // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
@@ -103,22 +128,34 @@ export default {
 </script>
 
 <style lang="scss">
+  clear-fix::after{
+    content:"";
+    clear:both;
+    display: block;
+  }
   .carrousel-container{
-    height:400px;
+    // height:400px;
   }
   .swiper-container{
     background: #fff;
     height:100%;
     overflow: hidden;
   }
-  // #swiper-scrollbar{
-  //   position:absolute;
-  //   top:-1%;
-  //   left:0;
-  //   bottom:0;
-  //   width:120%;
-  // }
-  .carrsoule-img-box{
+  .img-row{
+    background-color: #ccc;
+    margin:0.1rem 0;
+  }
+  .fleft,.fright{
+    float: left;
+    width:49.6%;
+    margin-top:0.06rem;
+  }
+  .fright{
+    float: right;
+
+  }
+  .png4{
+    display: flex;
   }
   img{
     width:100%;

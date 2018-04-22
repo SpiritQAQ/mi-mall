@@ -50,7 +50,7 @@ export default {
     .main-tab{
       position: relative;
       overflow: scroll;
-      box-shadow: 0px 3px 3px 0px #ccc;
+      box-shadow: 0px 3px 5px 0px #aaa;
       z-index:5;
       background-color: #fff;
       .item-container{
@@ -76,7 +76,7 @@ export default {
       position: relative;
       border:0px solid ;
       // top:50px;
-      background: #ccc;
+      // background: #ccc;
       z-index:1;
       overflow: scroll;
     }
