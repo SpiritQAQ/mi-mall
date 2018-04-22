@@ -12,9 +12,11 @@ import TopBar from "@/components/TopBar"
 import cssReset from "../static/css/reset.css"
 import Footer from "./components/Footer"
 import PageMain from './components/PageMain'
+import store from './store/index'
 export default {
   name: 'App',
   components:{TopBar,Footer,PageMain},
+  store,
   data(){
     return {
       contentHeight : 0
@@ -24,7 +26,7 @@ export default {
     let _this = this
     fnResize()
     getHeight()
-    console.log(this.contentHeight +'fa')
+    // console.log(this.contentHeight +'fa')
     window.onresize = function () {
       fnResize()
       getHeight()

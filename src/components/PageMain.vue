@@ -3,15 +3,8 @@
     <TopBar ref="topBar"/>
     <div class="main-tab" ref="mainTab">
       <ul class= 'item-container'>
-        <li class="tab-item">推荐</li>
-        <li class="tab-item">手机</li>
-        <li class="tab-item">智能</li>
-        <li class="tab-item">电视</li>
-        <li class="tab-item">电脑</li>
-        <li class="tab-item">全面屏</li>
-        <li class="tab-item">生活周边</li>
-        <li class="tab-item">盒子</li>
-        <li class="tab-item">艺术</li>
+        <li v-for="(item,key) in navTabList" class="tab-item" 
+            @click="clickTab(key)" :class="{active:navTab==key}">{{item.name}}</li>
       </ul>
     </div>
     <div class="content-box" v-bind:style="{height:contentHeight+'px'}">
@@ -30,13 +23,22 @@ export default {
   components:{Carrousel,TopBar},
   data(){
     return {
-      
     }
   },
   props:['contentHeight'],
-  mounted(){
-    console.log(this.contentHeight)
-    
+  computed:{
+    navTabList(){
+      return this.$store.state.navTabList
+    },
+    navTab(){
+      return this.$store.state.navTab
+    }
+  },
+  methods:{
+    clickTab(key){
+      this.showingTab = key
+      this.$store.commit('changeNavTab',key)
+    }
   }
 }
 </script>
@@ -54,15 +56,19 @@ export default {
       background-color: #fff;
       .item-container{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         width:120%;
         white-space: nowrap;
         .tab-item{
           background: #fff;
           list-style: none;
           font-size:.2rem;
-          padding:0.2rem;
+          padding:0.2rem; 
         }
+        .active{
+        color : #FF6B00;
+        }
+
       }
     }
     .content-box{
