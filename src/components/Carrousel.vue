@@ -2,29 +2,50 @@
   <div class="carrousel-container">
   <swiper :options="swiperOption" ref="mySwiper" @transitionEnd = "changeTab">
     <!-- slides -->
-    <swiper-slide>I'm Slide 1</swiper-slide>
-    <swiper-slide>I'm Slide 2</swiper-slide>
-    <swiper-slide>I'm Slide 3</swiper-slide>
-    <swiper-slide>I'm Slide 4</swiper-slide>
-    <swiper-slide>I'm Slide 5</swiper-slide>
+    <swiper-slide>
+      <!-- <swiper :option="swiper2" ref="miniSwiper">
+        <swiper-slide v-for="item in carrousel1">
+          <div class="carrsoule-img-box"><a><img v-bind:src="item.src" alt=""></a></div>
+        </swiper-slide>
+        <div class="swiper-pagination" ref="pagination" slot="pagination"></div>
+      </swiper>  -->
+      <SmallCarrousel :page="1"/>
+    </swiper-slide>
+    <swiper-slide>
+      <SmallCarrousel :page="2"/>
+    </swiper-slide>
+    <swiper-slide>
+      <SmallCarrousel :page="3"/>
+    </swiper-slide>
+    <swiper-slide>
+      <SmallCarrousel :page="4"/>
+    </swiper-slide>
+    <swiper-slide>
+      <SmallCarrousel :page="5"/>
+    </swiper-slide>
     <swiper-slide>I'm Slide 6</swiper-slide>
-    <swiper-slide>I'm Slide 7</swiper-slide>
-    <swiper-slide>I'm Slide 8</swiper-slide>
+    <swiper-slide>
+      <SmallCarrousel :page="7"/>
+    </swiper-slide>
+    <swiper-slide>
+      <SmallCarrousel :page="8"/>
+    </swiper-slide>
     <swiper-slide>I'm Slide 9</swiper-slide>
     <!-- Optional controls -->
-    <div class="swiper-scrollbar" id="swiper-scrollbar"  slot="scrollbar"></div>
+    <!-- <div class="swiper-scrollbar"   slot="scrollbar"></div> -->
   </swiper>
   </div>
 </template>
 
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-
+import SmallCarrousel from "./SmallCarrousel"
 export default {
   name:'Carrousel',
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    SmallCarrousel
   },
   data() {
       return {
@@ -37,10 +58,6 @@ export default {
           grabCursor : true,
           setWrapperSize :true,
           autoHeight: true,
-          scrollbar:{
-            el:".swiper-scrollbar",
-            hide:false
-          },
           mousewheelControl : false,
           observeParents:true,
           // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
@@ -53,6 +70,7 @@ export default {
             // }
           },
         },
+        page:0
         
       }
   },
@@ -63,19 +81,21 @@ export default {
     },  
     swiper(){
       return this.$refs.mySwiper.swiper
+    },
+    carrousel1(){
+      return this.$store.state.carrousel1
     }
   },
   watch:{
     navTab:function(val){
-      this.$refs.mySwiper.swiper.slideTo(val,500,false)
+      this.swiper.slideTo(val,500,false)
     },   
   },
   methods:{
     changeTab(){
-      let carrouselTab = this.$refs.mySwiper.swiper.progress*8
+      let carrouselTab = this.swiper.progress*8
       if(carrouselTab!==this.navTab){
         this.$store.commit('changeNavTab',carrouselTab)
-        console.log('butong')
       }
     }
   }
@@ -84,11 +104,12 @@ export default {
 
 <style lang="scss">
   .carrousel-container{
-    height:100px;
+    height:400px;
   }
   .swiper-container{
     background: #fff;
-    height:100px;
+    height:100%;
+    overflow: hidden;
   }
   // #swiper-scrollbar{
   //   position:absolute;
@@ -97,4 +118,9 @@ export default {
   //   bottom:0;
   //   width:120%;
   // }
+  .carrsoule-img-box{
+  }
+  img{
+    width:100%;
+  }
 </style>

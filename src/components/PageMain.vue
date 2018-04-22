@@ -36,7 +36,6 @@ export default {
   },
   methods:{
     clickTab(key){
-      this.showingTab = key
       this.$store.commit('changeNavTab',key)
     }
   }
@@ -49,9 +48,9 @@ export default {
   .page-main{
     height:100%;
     .main-tab{
+      position: relative;
       overflow: scroll;
-      border-bottom: 1px solid #ccc;
-      // box-shadow: 0 3px 1px 1px #ccc;
+      box-shadow: 0px 3px 3px 0px #ccc;
       z-index:5;
       background-color: #fff;
       .item-container{
@@ -59,19 +58,24 @@ export default {
         justify-content: space-around;
         width:120%;
         white-space: nowrap;
+        // border-bottom: 1px solid #ccc;
         .tab-item{
           background: #fff;
           list-style: none;
           font-size:.2rem;
-          padding:0.2rem; 
+          padding: 0.2rem 0.1rem 0.15rem 0.1rem; 
         }
         .active{
         color : #FF6B00;
+        border-bottom: 3px solid #FF6b00;
         }
 
       }
     }
     .content-box{
+      position: relative;
+      border:0px solid ;
+      // top:50px;
       background: #ccc;
       z-index:1;
       overflow: scroll;
