@@ -1,7 +1,7 @@
 <template>
   <div class="page-main">
-    <TopBar/>
-    <div class="main-tab">
+    <TopBar ref="topBar"/>
+    <div class="main-tab" ref="mainTab">
       <ul class= 'item-container'>
         <li class="tab-item">推荐</li>
         <li class="tab-item">手机</li>
@@ -30,14 +30,12 @@ export default {
   components:{Carrousel,TopBar},
   data(){
     return {
-      contentHeight : 0
+      
     }
   },
+  props:['contentHeight'],
   mounted(){
-    this.contentHeight=document.getElementsByClassName('page-main')[0].offsetHeight - document.getElementsByClassName('top-bar')[0].offsetHeight - document.getElementsByClassName('main-tab')[0].offsetHeight-parseInt(document.documentElement.style.fontSize)*1
-    window.onresize = () =>{
-      this.contentHeight=document.getElementsByClassName('page-main')[0].offsetHeight - document.getElementsByClassName('top-bar')[0].offsetHeight - document.getElementsByClassName('main-tab')[0].offsetHeight
-    }
+    console.log(this.contentHeight)
     
   }
 }
