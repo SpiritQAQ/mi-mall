@@ -31,7 +31,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page1-goods" v-for="item in goodsOfPage1">
-          <img :src=item.src alt="">
+          <img v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -45,7 +45,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage2">
-          <img :src=item.src alt="">
+          <img v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -59,7 +59,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage3">
-          <img :src=item.src alt="">
+          <img v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -73,7 +73,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage4">
-          <img :src=item.src alt="">
+          <img v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -87,7 +87,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage5">
-          <img :src=item.src alt="">
+          <img v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -102,7 +102,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage7">
-          <img :src=item.src alt="">
+          <img v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -116,7 +116,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage8">
-          <img :src=item.src alt="">
+          <img v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -145,6 +145,7 @@ export default {
         swiperOption: {//以下配置不懂的，可以去swiper官网看api，链接http://www.swiper.com.cn/api/
           // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，<br>　　　　　　　　假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
           notNextTick: true,
+          speed:100,
           // swiper configs 所有的配置同swiper官方api配置
           // autoplay: 3000,
           direction : 'horizontal',
