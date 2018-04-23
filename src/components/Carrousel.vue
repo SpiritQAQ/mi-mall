@@ -23,11 +23,11 @@
         <img src= 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/a589d24e74c4d96191dd46635054e804.jpg'  alt="">
       </div>
       <div class="img-row">
-        <img src= "http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115034174111.png" alt="">
+        <img v-lazy= "'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115034174111.png'" alt="">
 
       </div>
       <div class="img-row">
-        <img src= 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115033089933.png' alt="">
+        <img v-lazy= "'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115033089933.png'" alt="">
       </div>
       <div class="img-row clear-fix">
         <div class="page1-goods" v-for="item in goodsOfPage1">
@@ -94,7 +94,15 @@
         </div>
       </div>      
     </swiper-slide>
-    <swiper-slide>I'm Slide 6</swiper-slide>
+    <swiper-slide class='quanmianping'>
+      <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317010732422.png' @click="$router.openPage('/detail/1003')" alt="">
+      <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/48ca6cfb19c45e7cbecbd8c34c757445.jpg' alt="">
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317012799998.png'" alt="">
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317013522274.png'" alt="">
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317005752430.png'" alt="">
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317011947232.png'" alt="">
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317014434073.png'" alt="">
+    </swiper-slide>
     <swiper-slide>
       <SmallCarrousel :page="7"/>
       <div class="img-row">
@@ -123,7 +131,12 @@
         </div>
       </div>      
     </swiper-slide>
-    <swiper-slide>I'm Slide 9</swiper-slide>
+    <swiper-slide class="fix-img">
+      <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317154829739.png" alt="">
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317155627636.png'" alt="">
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317160444789.png'" alt="">
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317161351928.png'" alt="">
+    </swiper-slide>
     <!-- Optional controls -->
     <!-- <div class="swiper-scrollbar"   slot="scrollbar"></div> -->
   </swiper>
@@ -271,6 +284,9 @@ export default {
   }
   .page1-goods:nth-child(2n+1),.page-goods:nth-child(2n+1){
     margin-right:0.07rem;
+  }
+  .fix-img{
+    font-size:0; //去除img之间空隙（纯img相邻）
   }
   img{
     width:100%;
