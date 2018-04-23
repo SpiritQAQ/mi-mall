@@ -14,6 +14,7 @@ import Footer from "./components/Footer"
 import PageMain from './components/PageMain'
 import store from './store/index'
 
+
 export default {
   name: 'App',
   components:{TopBar,Footer,PageMain},
