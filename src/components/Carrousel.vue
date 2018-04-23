@@ -14,46 +14,114 @@
         <a href="javascript:;">
           <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022290460400.png" alt=""></a>
       </div>
-      <div class="img-rowclear">
+      <div class="img-row clear-fix imgs">
         <img class= "fleft" src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011114551289342.png" alt="">
         <img class = "fright" src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e2ad0dbf777fda097e55cea9ce716e33.jpg?thumb=1&w=358&h=252" alt="">
         <img class = "fright" src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011114550596671.png" alt="">
       </div>
-      <div class="img-rowclear">
-        <a href=""><img src="" alt=""></a>
-        <a href=""><img src="" alt=""></a>
-        <a href=""><img src="" alt=""></a>
+      <div class="img-row clear-fix">
+        <img src= 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/a589d24e74c4d96191dd46635054e804.jpg'  alt="">
       </div>
-      <div class="img-rowclear">
-        <a href=""><img src="" alt=""></a>
-        <a href=""><img src="" alt=""></a>
-        <a href=""><img src="" alt=""></a>
+      <div class="img-row">
+        <img src= "http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115034174111.png" alt="">
+
       </div>
-      <div class="img-row clear">
-        <a href=""><img src="" alt=""></a>
-        <a href=""><img src="" alt=""></a>
-        <a href=""><img src="" alt=""></a>
+      <div class="img-row">
+        <img src= 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115033089933.png' alt="">
       </div>
-      <div class="img-row"></div>
+      <div class="img-row clear-fix">
+        <div class="page1-goods" v-for="item in goodsOfPage1">
+          <img :src=item.src alt="">
+          <h4>{{item.title}}</h4>
+          <p>{{item.con}}</p>
+          <div>￥{{item.money}}</div>
+        </div>
+      </div>
     </swiper-slide>
     <swiper-slide>
       <SmallCarrousel :page="2"/>
+      <div class="img-row">
+         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="">
+      </div>
+      <div class="img-row clear-fix">
+        <div class="page-goods" v-for="item in goodsOfPage2">
+          <img :src=item.src alt="">
+          <h4>{{item.title}}</h4>
+          <p>{{item.con}}</p>
+          <div>￥{{item.money}}</div>
+        </div>
+      </div>
     </swiper-slide>
     <swiper-slide>
       <SmallCarrousel :page="3"/>
+      <div class="img-row">
+         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="">
+      </div>
+      <div class="img-row clear-fix">
+        <div class="page-goods" v-for="item in goodsOfPage3">
+          <img :src=item.src alt="">
+          <h4>{{item.title}}</h4>
+          <p>{{item.con}}</p>
+          <div>￥{{item.money}}</div>
+        </div>
+      </div>      
     </swiper-slide>
     <swiper-slide>
       <SmallCarrousel :page="4"/>
+      <div class="img-row">
+         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="">
+      </div>
+      <div class="img-row clear-fix">
+        <div class="page-goods" v-for="item in goodsOfPage4">
+          <img :src=item.src alt="">
+          <h4>{{item.title}}</h4>
+          <p>{{item.con}}</p>
+          <div>￥{{item.money}}</div>
+        </div>
+      </div>      
     </swiper-slide>
     <swiper-slide>
       <SmallCarrousel :page="5"/>
+      <div class="img-row">
+         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="">
+      </div>
+      <div class="img-row clear-fix">
+        <div class="page-goods" v-for="item in goodsOfPage5">
+          <img :src=item.src alt="">
+          <h4>{{item.title}}</h4>
+          <p>{{item.con}}</p>
+          <div>￥{{item.money}}</div>
+        </div>
+      </div>      
     </swiper-slide>
     <swiper-slide>I'm Slide 6</swiper-slide>
     <swiper-slide>
       <SmallCarrousel :page="7"/>
+      <div class="img-row">
+         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="">
+      </div>
+      <div class="img-row clear-fix">
+        <div class="page-goods" v-for="item in goodsOfPage7">
+          <img :src=item.src alt="">
+          <h4>{{item.title}}</h4>
+          <p>{{item.con}}</p>
+          <div>￥{{item.money}}</div>
+        </div>
+      </div>      
     </swiper-slide>
     <swiper-slide>
       <SmallCarrousel :page="8"/>
+      <div class="img-row">
+         <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316464243450.png" alt="">
+      </div>
+      <div class="img-row clear-fix">
+        <div class="page-goods" v-for="item in goodsOfPage8">
+          <img :src=item.src alt="">
+          <h4>{{item.title}}</h4>
+          <p>{{item.con}}</p>
+          <div>￥{{item.money}}</div>
+        </div>
+      </div>      
     </swiper-slide>
     <swiper-slide>I'm Slide 9</swiper-slide>
     <!-- Optional controls -->
@@ -99,7 +167,9 @@ export default {
         
       }
   },
-  mounted(){},
+  mounted(){
+    console.log(this.goodsOfPage1)
+  },
   computed:{
     navTab(){
       return this.$store.state.navTab
@@ -107,9 +177,27 @@ export default {
     swiper(){
       return this.$refs.mySwiper.swiper
     },
-    carrousel1(){
-      return this.$store.state.carrousel1
-    }
+    goodsOfPage1(){
+      return this.$store.state.goodsOfPage1
+    },
+    goodsOfPage2(){
+      return this.$store.state.goodsOfPage2
+    },
+    goodsOfPage3(){
+      return this.$store.state.goodsOfPage3
+    }, 
+    goodsOfPage4(){
+      return this.$store.state.goodsOfPage4
+    },  
+    goodsOfPage5(){
+      return this.$store.state.goodsOfPage5
+    },
+    goodsOfPage7(){
+      return this.$store.state.goodsOfPage7
+    },  
+    goodsOfPage8(){
+      return this.$store.state.goodsOfPage8
+    },                   
   },
   watch:{
     navTab:function(val){
@@ -128,22 +216,31 @@ export default {
 </script>
 
 <style lang="scss">
-  clear-fix::after{
+  .clear-fix::after{
     content:"";
     clear:both;
     display: block;
   }
   .carrousel-container{
-    // height:400px;
+    height:100%;
   }
   .swiper-container{
     background: #fff;
     height:100%;
-    overflow: hidden;
+    // overflow: hidden;
   }
+  .swiper-wrapper{
+    height:100%;
+    
+  }
+  .swiper-slide{
+    overflow:scroll
+  }
+  .imgs{background: #ccc}
   .img-row{
-    background-color: #ccc;
-    margin:0.1rem 0;
+    background-color: #fff; 
+    // padding:0.05rem 0 0 0;
+    padding-bottom:0.1rem;
   }
   .fleft,.fright{
     float: left;
@@ -152,10 +249,27 @@ export default {
   }
   .fright{
     float: right;
-
   }
   .png4{
     display: flex;
+    justify-content: space-between;
+    background: #fff;
+    width:100%;
+    a{
+      width:22%;
+    }
+  }
+  .page1-goods,.page-goods{
+    width:49.5%;
+    float: left;
+    margin-bottom:0.2rem;
+    text-align: left;
+    h4{padding:0.2rem;font-size:.25rem;font-weight: 400}
+    p{padding:0 0.2rem;color:#666;}
+    div{padding:0.2rem 0.2rem;color:#FF6b00;font-size:.25rem;}
+  }
+  .page1-goods:nth-child(2n+1),.page-goods:nth-child(2n+1){
+    margin-right:0.07rem;
   }
   img{
     width:100%;

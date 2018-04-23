@@ -3,7 +3,7 @@
     <TopBar ref="topBar"/>
     <div class="main-tab" ref="mainTab">
       <ul class= 'item-container'>
-        <li v-for="(item,key) in navTabList" class="tab-item" 
+        <li v-for="(item,key) in navTabList"  class="tab-item" 
             @click="clickTab(key)" :class="{active:navTab==key}">{{item.name}}</li>
       </ul>
     </div>
@@ -50,7 +50,7 @@ export default {
     .main-tab{
       position: relative;
       overflow: scroll;
-      box-shadow: 0px 3px 5px 0px #aaa;
+      box-shadow: 0px 5px 5px -3px #aaa;
       z-index:5;
       background-color: #fff;
       .item-container{

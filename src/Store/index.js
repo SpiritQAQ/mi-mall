@@ -141,6 +141,469 @@ export default new Vuex.Store({
         href: '/detail/1017'
       }
     ],
+    goodsOfPage1:[
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+    ],
+    goodsOfPage2:[
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011213403719963.png',
+        title: '红米Note 4X 32GB',
+        con: '多彩金属 / 超长续航',
+        money: 899,
+        href: '/detail/1010'
+      },
+      
+    ],
+    goodsOfPage3:[
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/93cc1fa15e0e9af87e37cba047d8186e.jpg',
+        title: '米家四位四控插线板',
+        con: '四位分控，随用随开',
+        money: 89,
+        href: '/detail/1012'
+      },
+    ],
+    goodsOfPage4:[
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011316504878837.png',
+        title: '小米电视4A 43英寸',
+        con: '全高清 HDR，64位处理器',
+        money: 1999,
+        href: '/detail/1004'
+      },
+    ],
+    goodsOfPage5:[
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/cf0b9ede4dbbc115f3d2d1b032e97d21.jpg',
+        title: '13.3"笔记本i5 独显',
+        con: '指纹解锁，全金属机身',
+        money: 5199,
+        href: '/detail/1014'
+      },
+    ],
+    goodsOfPage7:[
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317083193859.png',
+        title: '8H护颈乳胶枕 Z2',
+        con: '多重新科技  升级好睡眠',
+        money: 239,
+        href: '/detail/1016'
+      },
+    ],
+    goodsOfPage8:[
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+      {
+        src: 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317120865819.png',
+        title: '小米影视会员卡',
+        con: '畅享海量片库',
+        money: 498,
+        href: '/detail/1018'
+      },
+    ],
     navTab :0,
 
   },
