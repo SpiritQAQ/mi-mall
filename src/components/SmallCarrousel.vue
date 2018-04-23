@@ -55,7 +55,7 @@ export default {
       return this.$store.state[name]
     }
   },mounted(){
-    console.log(this.page)
+    // console.log(this.page)
   }
 
 }

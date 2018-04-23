@@ -12,8 +12,9 @@ import VueLazyLoad from 'vue-lazyload'
 Vue.use(Vuex)
 Vue.use(VueAwesomeSwiper)
 Vue.use(VueLazyLoad,{
+  preLoad: 1,
   error:'./static/error.png',
-  loading:'./static/loading.gif'
+  loading:''
 })
 Vue.config.productionTip = false
 
