@@ -182,7 +182,7 @@ export default {
       }
   },
   mounted(){
-    console.log(this.goodsOfPage1)
+    // console.log(this.goodsOfPage1)
   },
   computed:{
     navTab(){

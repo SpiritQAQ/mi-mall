@@ -2,8 +2,9 @@
   <div id="app">
     <!-- <router-view/> -->
 
-    <PageMain ref="pageMain" v-bind:content-height = "contentHeight"/> 
-    <Footer ref="footer"  />
+    <PageMain ref="pageMain" v-bind:content-height = "contentHeight" v-show="footerTab==1"/>
+    <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-show="footerTab ==2"/> 
+    <Footer ref="footer"/>
   </div>
 </template>
 
@@ -12,16 +13,23 @@ import TopBar from "@/components/TopBar"
 import cssReset from "../static/css/reset.css"
 import Footer from "./components/Footer"
 import PageMain from './components/PageMain'
+import CategoryList from "./components/CategoryList"
 import store from './store/index'
 
 
 export default {
   name: 'App',
-  components:{TopBar,Footer,PageMain},
+  components:{TopBar,Footer,PageMain,CategoryList},
   store,
   data(){
     return {
-      contentHeight : 0
+      contentHeight : 0,
+      categoryListHeight:0
+    }
+  },
+  computed:{
+    footerTab(){
+      return this.$store.state.footerTab
     }
   },
   mounted(){
@@ -39,6 +47,7 @@ export default {
       let searchHeight = _this.$refs.pageMain.$refs.topBar.$el.offsetHeight
       let mainTabHeight = _this.$refs.pageMain.$refs.mainTab.offsetHeight
       _this.contentHeight = pageMainHeight - footerHeight - searchHeight - mainTabHeight
+      _this.categoryListHeight = pageMainHeight - footerHeight - searchHeight 
     }
     
     

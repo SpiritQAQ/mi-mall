@@ -15,7 +15,7 @@
       <svg class="icon icon-search" aria-hidden="true">
         <use xlink:href="#icon-search"></use>
       </svg>
-      <input id="search" type="text">
+      <input class="search" type="text">
     </div>
     <div class='user-box'>
       <svg class="icon" aria-hidden="true">
@@ -85,9 +85,9 @@
           height:.4rem;
           color:#bbb;
         }
-        #search{
+        .search{
           outline: none;
-          border-radius: 3px;
+          border-radius: 7px;
           box-sizing: border-box;
           border:1px solid #ccc;
           padding:0 0 0 .5rem;
