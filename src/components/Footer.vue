@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="footer-item" @click="changeTo(1)" :class="{active:showingTab==1}">
+    <div class="footer-item" @click="changeTo(1)" :class="{active:footerTab==1}">
       <div class="icon-box">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-home"></use>
@@ -8,7 +8,7 @@
       </div>
       <div class="icon-header">首页</div>
     </div>
-    <div class="footer-item" @click="changeTo(2)" :class="{active:showingTab==2}">
+    <div class="footer-item" @click="changeTo(2)" :class="{active:footerTab==2}">
       <div class="icon-box">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-fenlei1"></use>
@@ -16,7 +16,7 @@
       </div>
       <div class="icon-header">分类</div>
     </div>
-    <div class="footer-item" @click="changeTo(3)" :class="{active:showingTab==3}">
+    <div class="footer-item" @click="changeTo(3)" :class="{active:footerTab==3}">
       <div class="icon-box">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-gouwuche2"></use>
@@ -24,7 +24,7 @@
       </div>
       <div class="icon-header">购物车</div>
     </div>
-    <div class="footer-item" @click="changeTo(4)" :class="{active:showingTab==4}">
+    <div class="footer-item" @click="changeTo(4)" :class="{active:footerTab==4}">
       <div class="icon-box">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-yonghu"></use>
@@ -40,13 +40,18 @@
     name :'Footer',
     data (){
       return {
-        showingTab:1
       }
     },
     methods:{
       changeTo(num){
-        this.showingTab = num
-      }
+        this.$store.commit('changeFooterTab',num)
+      },
+    },
+    computed:{
+        footerTab(){
+        return this.$store.state.footerTab
+      
+    }
 
 
     }

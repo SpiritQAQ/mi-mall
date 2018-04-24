@@ -605,11 +605,14 @@ export default new Vuex.Store({
       },
     ],
     navTab :0,
-
+    footerTab : 1,
   },
   mutations:{
     changeNavTab(state,val){
       state.navTab = val
+    },
+    changeFooterTab(state,val){
+      state.footerTab = val
     }
   },
   modules: {
