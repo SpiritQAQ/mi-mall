@@ -3,8 +3,11 @@
     <!-- <router-view/> -->
 
     <PageMain ref="pageMain" v-bind:content-height = "contentHeight" v-show="footerTab==1"/>
-    <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-show="footerTab ==2"/> 
+    <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-if="footerTab ==2"/> 
+    <Gouwuche ref='gouwuche' v-show="footTab==3"/>
+    <UserPage ref ="userPage" v-show="footTab==4"/>
     <Footer ref="footer"/>
+    
   </div>
 </template>
 
@@ -14,12 +17,14 @@ import cssReset from "../static/css/reset.css"
 import Footer from "./components/Footer"
 import PageMain from './components/PageMain'
 import CategoryList from "./components/CategoryList"
+import Gouwuche from "./components/Gouwuche"
+import UserPage from "./components/UserPage"
 import store from './store/index'
 
 
 export default {
   name: 'App',
-  components:{TopBar,Footer,PageMain,CategoryList},
+  components:{TopBar,Footer,PageMain,CategoryList,Gouwuche,UserPage},
   store,
   data(){
     return {
