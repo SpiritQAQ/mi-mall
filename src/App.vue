@@ -3,9 +3,9 @@
     <!-- <router-view/> -->
 
     <PageMain ref="pageMain" v-bind:content-height = "contentHeight" v-show="footerTab==1"/>
-    <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-if="footerTab ==2"/> 
-    <Gouwuche ref='gouwuche' v-show="footTab==3"/>
-    <UserPage ref ="userPage" v-show="footTab==4"/>
+    <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-show="footerTab ==2"/> 
+    <Gouwuche ref='gouwuche' v-show="footerTab==3"/>
+    <UserPage ref ="userPage" v-show="footerTab==4"/>
     <Footer ref="footer"/>
     
   </div>
