@@ -5,7 +5,7 @@
     <PageMain ref="pageMain" v-bind:content-height = "contentHeight" v-show="footerTab==1"/>
     <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-show="footerTab ==2"/> 
     <Gouwuche ref='gouwuche' v-show="footerTab==3"/>
-    <UserPage ref ="userPage" v-show="footerTab==4"/>
+    <UserPage ref ="userPage" v-show="footerTab==4" v-bind:noFooterHeight = "noFooterHeight"/>
     <Footer ref="footer"/>
     
   </div>
@@ -29,7 +29,8 @@ export default {
   data(){
     return {
       contentHeight : 0,
-      categoryListHeight:0
+      categoryListHeight:0,
+      noFooterHeight:0
     }
   },
   computed:{
@@ -53,6 +54,7 @@ export default {
       let mainTabHeight = _this.$refs.pageMain.$refs.mainTab.offsetHeight
       _this.contentHeight = pageMainHeight - footerHeight - searchHeight - mainTabHeight
       _this.categoryListHeight = pageMainHeight - footerHeight - searchHeight 
+      _this.noFooterHeight = pageMainHeight - footerHeight
     }
     
     

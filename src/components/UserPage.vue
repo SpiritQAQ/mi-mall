@@ -1,6 +1,6 @@
 <template>
-  <div class="user-page">
-    <div class="u-header">
+  <div class="user-page " v-bind:style="{height : noFooterHeight+'px'}">
+    <div class="u-header" ref="u-header">
         <div class="user-photo">
           <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/normal-face.png" alt="">
         </div>
@@ -36,21 +36,77 @@
         </div>
         <div class="h-rows">
           <div class="h-row">
+            <div class="h-row-icon">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-youhuiquan"></use>
+              </svg>
+            </div>
             <div class="h-row-name">
               优惠券
             </div>
           </div>
-          <div class="h-row">会员中心</div>
-          <div class="h-row">我的钱包</div>
+          <div class="h-row">
+            <div class="h-row-icon">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-huiyuanquanyi"></use>
+              </svg>
+            </div>
+            <div class="h-row-name">
+              会员中心
+            </div>
+          </div>
+          <div class="h-row h-row-noborder">
+            <div class="h-row-icon">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-qianbao3"></use>
+              </svg>
+            </div>
+            <div class="h-row-name">
+              我的钱包
+            </div>
+          </div>
         </div>
         <div class="h-rows">
-          <div class="h-row">服务之家</div>
-          <div class="h-row">小米之家</div>
-          <div class="h-row">小米小店</div>
-          <div class="h-row">更多功能</div>          
+          <div class="h-row">
+            <div class="h-row-icon">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon--fuwu"></use>
+              </svg>
+            </div>
+            <div class="h-row-name">
+              服务之家
+            </div>
+          </div>
+          <div class="h-row">
+            <div class="h-row-icon">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-dianpu"></use>
+              </svg>
+            </div>
+            <div class="h-row-name">
+              小米之家
+            </div>
+            </div>
+          <div class="h-row h-row-noborder">
+            <div class="h-row-icon">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-fenlei-copy"></use>
+              </svg>
+            </div>
+            <div class="h-row-name">
+              更多功能
+            </div></div>          
         </div>
         <div class="h-rows">
-          <div class="h-row">设置</div>
+          <div class="h-row h-row-noborder">
+            <div class="h-row-icon">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-shezhi"></use>
+              </svg>
+            </div>
+            <div class="h-row-name">
+              设置
+            </div></div>
         </div>
       
     </div>
@@ -62,13 +118,17 @@
 
 <script>
 export default {
-  name:"UserPage"
+  name:"UserPage",
+  props:["noFooterHeight"],
+  mounted(){
+  }
 }
 </script>
 
 <style lang="scss">
   .user-page{
     height:100%;
+    overflow:scroll;
     .u-header{
       background: #f37d0f url(http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/bg.63c8e19.png) fixed repeat top;
       background-size: 7rem;
@@ -100,20 +160,32 @@ export default {
     }
     .u-content{
       .h-rows{
+        border-bottom:0.1rem solid #eee;
       }
       .h-row{
-        line-height:.7rem;
+        position: relative;
+        line-height:.9rem;
         font-size:.24rem;
         display: flex;
         justify-content: space-between;
         padding: 0 .4rem 0 0rem;
-        border-bottom:1px solid #ccc;
+        border-bottom:1px solid #ddd;
         margin-left:1rem;
+      }
+      .h-row-noborder{
+        border:0;
+      }
+      .h-row-icon{
+        position: absolute;
+        left:-0.7rem;
+        top:0.15rem;
+        
       }
       .h-row1{
         border:0;
         margin:0;
         padding:0 .4rem 0 .3rem;
+        position: relative;
         .quanbudingdan{
           color:#666;
           font-size:.16rem;
