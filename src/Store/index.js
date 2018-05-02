@@ -1097,6 +1097,10 @@ export default new Vuex.Store({
     ],
     navTab :0,
     footerTab : 1,
+    cart:{
+      added :[],
+      checkoutStatus:null
+    }
   },
   mutations:{
     changeNavTab(state,val){
