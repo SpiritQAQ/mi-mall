@@ -70,7 +70,7 @@ export default {
             
           // },
         },
-        activeTab : 1
+        activeTab : 0
       }
   },mounted(){
     setTimeout(()=>{
