@@ -35,15 +35,15 @@ export default {
 //       return this.$store.state.footerTab
 //     }
 //   },
-//   mounted(){
+  mounted(){
 //     let _this = this
 //     fnResize()
 //     getHeight()
 //     // console.log(this.contentHeight +'fa')
-//     window.onresize = function () {
-//       fnResize()
+    window.onresize = function () {
+      fnResize()
 //       getHeight()
-//     }
+    }
 //     function getHeight(){
 //       let pageMainHeight =_this.$refs.pageMain.$el.offsetHeight
 //       let footerHeight = _this.$refs.footer.$el.offsetHeight
@@ -55,19 +55,19 @@ export default {
 //     }
     
     
-//     function fnResize() {
-//       var deviceWidth = document.documentElement.clientWidth || window.innerWidth
-//       if (deviceWidth >= 720) {
-//       deviceWidth = 750
-//       }
-//       if (deviceWidth <= 320) {
-//       deviceWidth = 320
-//       }
-//       document.documentElement.style.fontSize = (deviceWidth / 7.5 ) + 'px'
-//       //这里设置的比例是100px=1rem,例如，宽度为100px时，可以直接写成1rem。
-//     }
+    function fnResize() {
+      var deviceWidth = document.documentElement.clientWidth || window.innerWidth
+      if (deviceWidth >= 720) {
+      deviceWidth = 750
+      }
+      if (deviceWidth <= 320) {
+      deviceWidth = 320
+      }
+      document.documentElement.style.fontSize = (deviceWidth / 7.5 ) + 'px'
+      //这里设置的比例是100px=1rem,例如，宽度为100px时，可以直接写成1rem。
+    }
 
-//   }
+  }
 }
 </script>
 
@@ -82,6 +82,7 @@ export default {
   margin-top: 60px; */
   font-size :.14rem;
   width:100%;
+  max-width:10rem;
   height:100%;
   overflow: auto;
   /* border:1px solid ; */
