@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <!-- <router-view/> -->
+    
 
     <PageMain ref="pageMain" v-bind:content-height = "contentHeight" v-show="footerTab==1"/>
     <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-if="footerTab ==2"/> 
     <Gouwuche ref='gouwuche' v-show="footerTab==3"/>
     <UserPage ref ="userPage" v-show="footerTab==4" v-bind:noFooterHeight = "noFooterHeight"/>
+    <!-- <router-view></router-view> -->
     <Footer ref="footer"/>
     
   </div>
@@ -20,7 +21,7 @@ import CategoryList from "./components/CategoryList"
 import Gouwuche from "./components/Gouwuche"
 import UserPage from "./components/UserPage"
 import store from './store/index'
-
+import router from "vue-router"
 
 export default {
   name: 'App',
