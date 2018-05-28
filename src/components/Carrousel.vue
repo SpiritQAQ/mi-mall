@@ -96,8 +96,8 @@
     </swiper-slide>
     <swiper-slide class='quanmianping'>
       <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317010732422.png' @click="$router.openPage('/detail/1003')" alt="">
-      <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/48ca6cfb19c45e7cbecbd8c34c757445.jpg' alt="">
-      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317012799998.png'" alt="">
+      <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/48ca6cfb19c45e7cbecbd8c34c757445.jpg' style="position:relative;top:-2px;"alt="">
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317012799998.png'" alt="" >
       <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317013522274.png'" alt="">
       <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317005752430.png'" alt="">
       <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317011947232.png'" alt="">
@@ -165,6 +165,7 @@ export default {
           grabCursor : true,
           setWrapperSize :true,
           // autoHeight: true,
+          width: window.innerWidth,
           mousewheelControl : false,
           observeParents:true,
           // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
