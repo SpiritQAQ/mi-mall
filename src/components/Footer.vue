@@ -78,7 +78,7 @@
       padding:.1rem
     }
     .icon-header{
-      font-size:.18rem;
+      font-size:.22rem;
       margin-top:0.1rem;
     }
     .active{
