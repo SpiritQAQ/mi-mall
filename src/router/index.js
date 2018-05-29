@@ -6,6 +6,7 @@ import CategoryList from "@/components/CategoryList"
 import Gouwuche from "@/components/Gouwuche"
 import UserPage from "@/components/UserPage"
 import error404 from "@/views/error/404"
+import products from "@/views/products/product"
 import index from '@/index'
 
 Vue.use(Router)
@@ -49,10 +50,10 @@ export default new Router({
       path:"/products/:id",
       name:'products',
       props:true,
-      component(resolve){
-        require(['@/views/products/product.vue'],resolve) //异步懒加载
-        
-      }
+      // component(resolve){
+      //   require(['@/views/products/product.vue'],resolve) //异步懒加载
+      // }
+      component:products
     },
     {
       path:'/error/404',

@@ -1,34 +1,61 @@
 <template>
   <div class="prod-app">
+    <div class="back-btn" @click="linkBack()">
+      <div class="icon-box">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-shangyiye"></use>
+        </svg>
+      </div>   
+    </div> 
     <swiper :options="swiperOption" ref="mySwiper">
-      <swiper-slide v-for="item in info.banner" >
+      <swiper-slide v-for="item in info.banner" :key="item.src" >
         <div class='prod-imgCarr'>
           <a href=""><img v-bind:src="item.src" alt=""></a>
         </div>
       </swiper-slide>
        <div class="swiper-pagination" ref="pagination" slot="pagination"></div>
     </swiper>
-    <h2 class='prod-title'>{{info.title}}</h2>
-    <p class='prod-bigContent'>{{info.bigContent}}</p>
-    <p class='prod-smallContent'>{{info.smallContent}}</p>
-    <div class='prod-price-row'>
-      <div class="new-price">{{info.money}}</div>
-      <div class="old-price">{{info.noMoney}}</div>
-      <div class="price-tip">{{info.tips[0]}}</div>
-    </div>
-    <div class="choose-rows">
-      <span>分期</span><span>小米分期/花呗分期></span><span><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-you"></use>
-              </svg></span>
-    </div>
-    <div class="choose-rows">
-      <span>已选</span><span>{{info.chouse}}</span>
+    <div class="prod-main">
+      <p class='prod-title'>{{info.title}}</p>
+      <p class='prod-bigContent'>{{info.bigContent}}</p>
+      <p class='prod-smallContent'>{{info.smallContent}}</p>
+      <div class='prod-price-row clearfix'>
+        <div class="new-price">￥{{info.money}}</div>
+        <div class="old-price">￥{{info.noMoney}}</div>
+        <div class="price-tip" v-for="tip in info.tips">{{tip}}</div>
+      </div>
+      <div class="choose-rows">
+        <span>分期</span><span>小米分期/花呗分期</span><span>></span>
+      </div>
+      <div class="choose-rows">
+        <span>已选</span><span>{{info.chouse}}</span><span>></span>
+      </div>
     </div>
     <div class="prod-imgs" >
-      <div class="prod-imgs-box" v-for='url in info.pBox'>
+      <div class="prod-imgs-box" v-for='url in info.pBox' :key="url">
         <img v-bind:src="url" alt="">
       </div>
-    </div>   
+    </div>
+    <div class="prod-footer  clearfix">
+        <div class="prod-footer-icon" @click="linkTo('/index')">
+          <div class="icon-box">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-home"></use>
+            </svg>
+          </div>
+          <div class="icon-header">首页</div>
+        </div>
+        <div class="prod-footer-icon">
+          <div class="icon-box">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-gouwuche2"></use>
+            </svg>
+          </div>
+          <div class="icon-header">购物车</div>
+        </div>
+        <div class="jiarugouwuche">加入购物车</div>
+    </div>
+  
   </div>
 </template>
 
@@ -55,7 +82,7 @@
           direction : 'horizontal',
           grabCursor : true,
           setWrapperSize :true,
-          autoHeight: true,
+          // autoHeight: true,
           mousewheelControl : false,
           observeParents:true,
           pagination: {
@@ -80,6 +107,12 @@
       this.getData()
     },
     methods:{
+      linkTo(path){
+        this.$router.push(path)
+      },
+      linkBack(){
+        this.$router.go(-1)
+      },
       getData(){
         this.loaded = false
         this.hide = true
@@ -106,10 +139,126 @@
 </script>
 
 <style lang='scss'>
-  .prod-imgCarr{
-    // width:100%;
+  .prod-app{
+    width:100%;
     img{width:100%;}
+    position: relative;
+    overflow: hidden;
   }
+  .prod-main{
+    margin:0.3rem;
+    text-align: left;
+    font-size:0.25rem;
+  }
+  .prod-title{
+    font-size:.45rem;
+    margin-bottom: 0.15rem;
+  }
+  .prod-bigContent{
+    color:#FF6b00;
+    font-size:0.25rem;
+    line-height: 0.35rem;   
+    margin-bottom: 0.1rem;
+  }
+  .prod-smallContent{
+    color:#666;
+    font-size:0.25rem;
+    margin-bottom: 0.3rem;
+    line-height: 0.4rem;    
+  }
+  .prod-price-row{
+    margin-bottom: 0.3rem;
+    .new-price{
+      float: left;
+      font-size:.45rem;
+      color:#FF6b00;
+    }
+    .old-price{
+      float: left;
+      margin:0.15rem 0.1rem 0 0.2rem;
+      text-decoration: line-through
+      
+    }
+    .price-tip{
+      float: left;
+      background: #FF6b00;
+      margin:0.05rem;
+      padding:0.05rem;
+      border-radius: 0.05rem;
+      color:#fff
+    }
+  }
+  .choose-rows{
+    margin-bottom:0.2rem;
+    background: #eee;
+    border:1px solid #ccc;
+    padding:0.3rem;
+    font-size:0.25rem;
+    border-radius: 0.1rem;
+    position: relative;
+    :first-child{
+      color:#666;
+      margin-right:0.3rem;
+    }
+    :last-child{
+      font-size:0.4rem;
+      position: absolute;
+      top:0.2rem;
+      right:0.3rem;
+      color:#666
+    }
+  }
+  .prod-footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background: #fff;
+    border-top:1px solid #aaa;
+    box-shadow: 0px 0px 10px 1px #ccc;
+    .prod-footer-icon{
+      width:25%;
+      float: left;
+      padding:0.1rem 0 ;
 
+      .icon-header{
+        font-size:0.25rem;
+        padding-top:0.1rem;
+      }
+      
+    }
+    .jiarugouwuche{
+      background-color: #FF6b00;
+      position: absolute;;
+      left:50%;
+      width:50%;
+      height:100%;
+      color:#fff;
+      font-size:.3rem;
+      line-height:1rem;
+      }
+  }
+  .back-btn{
+    position: absolute;;
+    color:#fff;
+    top:0.5rem;
+    left:0.5rem;
+    z-index:10;
+    width:0.7rem;
+    height:0.7rem;
+    border-radius: 0.7rem;
+    background-color: #555;
+    box-shadow: 0px 0px 50px 1px #ccc;
+    .icon-box{
+      position: relative;
+      top:0.08rem;
+      left:-0.02rem;
+    }
+  }
+  .clearfix::after{
+    content:'';
+    clear:both;
+    display: block;
+  }
 </style>
 

@@ -36,23 +36,23 @@ export default {
 //     }
 //   },
   mounted(){
-//     let _this = this
-//     fnResize()
-//     getHeight()
+    let _this = this
+    fnResize()
+    // getHeight()
 //     // console.log(this.contentHeight +'fa')
     window.onresize = function () {
       fnResize()
 //       getHeight()
     }
-//     function getHeight(){
-//       let pageMainHeight =_this.$refs.pageMain.$el.offsetHeight
-//       let footerHeight = _this.$refs.footer.$el.offsetHeight
-//       let searchHeight = _this.$refs.pageMain.$refs.topBar.$el.offsetHeight
-//       let mainTabHeight = _this.$refs.pageMain.$refs.mainTab.offsetHeight
-//       _this.contentHeight = pageMainHeight - footerHeight - searchHeight - mainTabHeight
-//       _this.categoryListHeight = pageMainHeight - footerHeight - searchHeight 
-//       _this.noFooterHeight = pageMainHeight - footerHeight
-//     }
+    // function getHeight(){
+    //   let pageMainHeight =_this.$refs.pageMain.$el.offsetHeight
+    //   let footerHeight = _this.$refs.footer.$el.offsetHeight
+    //   let searchHeight = _this.$refs.pageMain.$refs.topBar.$el.offsetHeight
+    //   let mainTabHeight = _this.$refs.pageMain.$refs.mainTab.offsetHeight
+    //   _this.contentHeight = pageMainHeight - footerHeight - searchHeight - mainTabHeight
+    //   _this.categoryListHeight = pageMainHeight - footerHeight - searchHeight 
+    //   _this.noFooterHeight = pageMainHeight - footerHeight
+    // }
     
     
     function fnResize() {
@@ -82,7 +82,7 @@ export default {
   margin-top: 60px; */
   font-size :.14rem;
   width:100%;
-  max-width:10rem;
+  /* max-width:10rem; */
   height:100%;
   overflow: auto;
   /* border:1px solid ; */

@@ -39,27 +39,19 @@ export default {
       return this.$store.state.footerTab
     }
   },
-  mounted(){
-    let _this = this
-    fnResize()
-    getHeight()
-    // console.log(this.contentHeight +'fa')
-    window.onresize = function () {
-      fnResize()
-      getHeight()
-    }
-    function getHeight(){
-      let pageMainHeight =_this.$refs.pageMain.$el.offsetHeight
-      let footerHeight = _this.$refs.footer.$el.offsetHeight
-      let searchHeight = _this.$refs.pageMain.$refs.topBar.$el.offsetHeight
-      let mainTabHeight = _this.$refs.pageMain.$refs.mainTab.offsetHeight
-      _this.contentHeight = pageMainHeight - footerHeight - searchHeight - mainTabHeight
-      _this.categoryListHeight = pageMainHeight - footerHeight - searchHeight 
-      _this.noFooterHeight = pageMainHeight - footerHeight
-    }
+  methods:{
+    getHeight : function (){
+      let pageMainHeight =this.$refs.pageMain.$el.offsetHeight
+      let footerHeight = this.$refs.footer.$el.offsetHeight
+      let searchHeight = this.$refs.pageMain.$refs.topBar.$el.offsetHeight
+      let mainTabHeight = this.$refs.pageMain.$refs.mainTab.offsetHeight
+      this.contentHeight = pageMainHeight - footerHeight - searchHeight - mainTabHeight
+      this.categoryListHeight = pageMainHeight - footerHeight - searchHeight 
+      this.noFooterHeight = pageMainHeight - footerHeight
+    },
     
     
-    function fnResize() {
+    fnResize: function() {
       var deviceWidth = document.documentElement.clientWidth || window.innerWidth
       if (deviceWidth >= 720) {
       deviceWidth = 750
@@ -70,6 +62,21 @@ export default {
       document.documentElement.style.fontSize = (deviceWidth / 7.5 ) + 'px'
       //这里设置的比例是100px=1rem,例如，宽度为100px时，可以直接写成1rem。
     }
+  },
+  updated(){
+    this.fnResize()
+    this.getHeight()
+  },
+  mounted(){
+    let _this = this
+    this.fnResize()
+    this.getHeight()
+    // console.log(this.contentHeight +'fa')
+    window.onresize = function () {
+      this.fnResize()
+      this.getHeight()
+    }
+
 
   }
 }
