@@ -10,7 +10,7 @@
     <swiper :options="swiperOption" ref="mySwiper">
       <swiper-slide v-for="item in info.banner" :key="item.src" >
         <div class='prod-imgCarr'>
-          <a href=""><img v-bind:src="item.src" alt=""></a>
+          <img v-bind:src="item.src" alt="">
         </div>
       </swiper-slide>
        <div class="swiper-pagination" ref="pagination" slot="pagination"></div>
@@ -21,7 +21,7 @@
       <p class='prod-smallContent'>{{info.smallContent}}</p>
       <div class='prod-price-row clearfix'>
         <div class="new-price">￥{{info.money}}</div>
-        <div class="old-price">￥{{info.noMoney}}</div>
+        <div v-if="info.noMoney" class="old-price">￥{{info.noMoney}}</div>
         <div class="price-tip" v-for="tip in info.tips">{{tip}}</div>
       </div>
       <div class="choose-rows">
@@ -260,5 +260,8 @@
     clear:both;
     display: block;
   }
+  .swiper-pagination-bullet-active{
+  background-color: #FF6b00;
+}
 </style>
 
