@@ -15,23 +15,23 @@
           <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011022290460400.png" alt=""></a>
       </div>
       <div class="img-row clear-fix imgs">
-        <img @click="$router.push({name:'products',params: { Id: 1001 }})" class= "fleft" src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011114551289342.png" alt="">
-        <img class = "fright" src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e2ad0dbf777fda097e55cea9ce716e33.jpg?thumb=1&w=358&h=252" alt="">
-        <img class = "fright" src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011114550596671.png" alt="">
+        <img @click="pushToProd(1001)" class= "fleft" src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011114551289342.png" alt="">
+        <img @click="pushToProd(1004)"class = "fright" src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/e2ad0dbf777fda097e55cea9ce716e33.jpg?thumb=1&w=358&h=252" alt="">
+        <img @click="pushToProd(1005)"class = "fright" src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011114550596671.png" alt="">
       </div>
       <div class="img-row clear-fix">
-        <img src= 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/a589d24e74c4d96191dd46635054e804.jpg'  alt="">
+        <img @click="pushToProd(1003)" src= 'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/a589d24e74c4d96191dd46635054e804.jpg'  alt="">
       </div>
       <div class="img-row">
-        <img v-lazy= "'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115034174111.png'" alt="">
+        <img @click="pushToProd(1006)" v-lazy= "'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115034174111.png'" alt="">
 
       </div>
       <div class="img-row">
-        <img v-lazy= "'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115033089933.png'" alt="">
+        <img @click="pushToProd(1007)" v-lazy= "'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011115033089933.png'" alt="">
       </div>
       <div class="img-row clear-fix">
         <div class="page1-goods" v-for="item in goodsOfPage1">
-          <img v-lazy="item.src" alt="">
+          <a v-bind:href="item.href"><img v-lazy="item.src" alt=""></a>
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -97,7 +97,7 @@
     <swiper-slide class='quanmianping'>
       <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317010732422.png' @click="$router.openPage('/detail/1003')" alt="">
       <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/48ca6cfb19c45e7cbecbd8c34c757445.jpg' style="position:relative;top:-2px;"alt="">
-      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317012799998.png'" alt="" >
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317012799998.png'" alt="" 
       <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317013522274.png'" alt="">
       <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317005752430.png'" alt="">
       <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317011947232.png'" alt="">
@@ -225,6 +225,9 @@ export default {
       if(carrouselTab!==this.navTab){
         this.$store.commit('changeNavTab',carrouselTab)
       }
+    },
+    pushToProd(ID){
+      this.$router.push({name:'products',params: { id: ID }})
     }
   }
 }
