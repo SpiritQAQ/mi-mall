@@ -24,9 +24,11 @@
         <swiper-slide v-for="list in categoryList" :key="list.name">
           <div class="c-item-header">{{list.name}}</div>
           <div class="c-item-container">
-            <div class="item-box" v-for="item in list.children">
-              <img v-bind:src="item.src" alt="">
-              <div class="item-name">{{item.name}}</div>
+            <div class="item-box" v-for="item in list.children" >
+              <a v-bind:href="item.link">
+                <img v-bind:src="item.src" alt="">
+                <div class="item-name">{{item.name}}</div>
+              </a>
             </div>
           </div>         
         </swiper-slide>
