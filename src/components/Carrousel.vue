@@ -45,7 +45,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage2">
-          <img v-lazy="item.src" alt="">
+          <img @click="pushToProd(1010)" v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -59,7 +59,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage3">
-          <img v-lazy="item.src" alt="">
+          <img @click="pushToProd(1012)" v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -73,7 +73,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage4">
-          <img v-lazy="item.src" alt="">
+          <img @click="pushToProd(1004)" v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -87,7 +87,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage5">
-          <img v-lazy="item.src" alt="">
+          <img @click="pushToProd(1014)" v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -95,9 +95,9 @@
       </div>      
     </swiper-slide>
     <swiper-slide class='quanmianping'>
-      <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317010732422.png' @click="$router.openPage('/detail/1003')" alt="">
+      <img @click="pushToProd(1003)" src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317010732422.png' alt="">
       <img src='http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/48ca6cfb19c45e7cbecbd8c34c757445.jpg' style="position:relative;top:-2px;"alt="">
-      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317012799998.png'" alt="" 
+      <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317012799998.png'" alt=""> 
       <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317013522274.png'" alt="">
       <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317005752430.png'" alt="">
       <img v-lazy="'http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/2018011317011947232.png'" alt="">
@@ -110,7 +110,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage7">
-          <img v-lazy="item.src" alt="">
+          <img @click="pushToProd(1016)" v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
@@ -124,7 +124,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page-goods" v-for="item in goodsOfPage8">
-          <img v-lazy="item.src" alt="">
+          <img @click="pushToProd(1018)" v-lazy="item.src" alt="">
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>

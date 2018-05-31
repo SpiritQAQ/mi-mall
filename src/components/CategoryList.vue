@@ -25,7 +25,7 @@
           <div class="c-item-header">{{list.name}}</div>
           <div class="c-item-container">
             <div class="item-box" v-for="item in list.children" >
-              <a v-bind:href="item.link">
+              <a v-bind:href="'#'+item.link">
                 <img v-bind:src="item.src" alt="">
                 <div class="item-name">{{item.name}}</div>
               </a>
