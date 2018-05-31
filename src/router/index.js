@@ -14,13 +14,17 @@ Vue.use(Router)
 
 
 export default new Router({
-  mode:'history',
-  base: __dirname,
+  // mode:'history',
+  // base: __dirname,
   routes: [
     {
       path:"/", 
       redirect:'/index' //默认重定向
     },
+    // {
+    //   path:"/#",
+    //   redirect:'/#/index'
+    // },
     {
       path:'/index',
       name:'index',
