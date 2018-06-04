@@ -1098,8 +1098,25 @@ export default new Vuex.Store({
     navTab :0,
     footerTab : 1,
     cart:{
-      added :[],
+      items:[],
       checkoutStatus:null
+    }
+  },
+  getters:{
+    cartLength:state=>{
+      return state.added.length
+    }
+  },
+  actions:{
+    addProductToCart({state,commit},product){
+      const cartItem = state.cart.items.find(item => item.id === product.id)
+       //es6 Array.find 返回满足提供的测试函数的第一个元素的值。否则返回undefined
+      if(!cartItem){
+        commit("pushProductToCart",{ id :product.id, info :product })
+      } else {
+        commit("incrementItemNum", cartItem)
+      }
+
     }
   },
   mutations:{
@@ -1108,7 +1125,23 @@ export default new Vuex.Store({
     },
     changeFooterTab(state,val){
       state.footerTab = val
-    }
+    },
+    pushProductToCart(state,{ id , info }){
+      state.cart.items.push({
+        id,
+        info,
+        num:1
+      })
+      console.log(state.cart.items)
+    },
+    setCartItems(state,{ items }){
+      state.cart.items = items
+    },
+    incrementItemNum(state,{ id }){
+      const cartItem = state.cart.items.find(item => item.id === id)
+      cartItem.num++
+    },
+
   },
   modules: {
 
