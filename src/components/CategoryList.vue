@@ -77,7 +77,6 @@ export default {
   },mounted(){
     setTimeout(()=>{
       this.$refs.mySwiper.update()
-      console.log(123)
     },1000)//swiper配置不生效，重新初始化
     // console.log(this.$refs.mySwiper)
     // console.log(this.$refs.mySwiper.swiper.slideTo(0,1000,false))
@@ -156,12 +155,17 @@ export default {
   .item-box{
     width:33%;
     float: left;
+    a{
+      text-decoration: none;
     img{
       width:66%;
     }
     .item-name{
       margin:0.2rem 0 0.5rem  ;
-      color:#777
+      color:#777;
+      font-size:0.25rem;
+      text-decoration: none;
+    }
     }
   }
   .c-tab-active{
