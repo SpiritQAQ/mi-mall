@@ -3,7 +3,7 @@
     
 
     <PageMain ref="pageMain" v-bind:content-height = "contentHeight" v-show="footerTab==1"/>
-    <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-if="footerTab ==2"/> 
+    <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-show="footerTab ==2"/> 
     <Gouwuche ref='gouwuche' v-show="footerTab==3"/>
     <UserPage ref ="userPage" v-show="footerTab==4" v-bind:noFooterHeight = "noFooterHeight"/>
     <!-- <router-view></router-view> -->
@@ -45,8 +45,9 @@ export default {
       let footerHeight = this.$refs.footer.$el.offsetHeight
       let searchHeight = this.$refs.pageMain.$refs.topBar.$el.offsetHeight
       let mainTabHeight = this.$refs.pageMain.$refs.mainTab.offsetHeight
+      let cateHeight = this.$refs.categoryList.$el.offsetHeight
       this.contentHeight = pageMainHeight - footerHeight - searchHeight - mainTabHeight
-      this.categoryListHeight = pageMainHeight - footerHeight - searchHeight 
+      this.categoryListHeight = cateHeight - footerHeight - searchHeight 
       this.noFooterHeight = pageMainHeight - footerHeight
     },
     
