@@ -182,7 +182,7 @@ export default {
         
       }
       .h-row1{
-        border:0;
+        border-bottom:1px solid #ddd;
         margin:0;
         padding:0 .4rem 0 .3rem;
         position: relative;

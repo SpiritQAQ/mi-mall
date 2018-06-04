@@ -8,7 +8,7 @@
       </div>   
     </div> 
     <swiper :options="swiperOption" ref="mySwiper">
-      <swiper-slide v-for="item in info.banner" :key="item.src" >
+      <swiper-slide v-for="item in info.banner" :key="item.haha" >
         <div class='prod-imgCarr'>
           <img v-bind:src="item.src" alt="">
         </div>
@@ -51,9 +51,9 @@
               <use xlink:href="#icon-gouwuche2"></use>
             </svg>
           </div>
-          <div class="icon-header">购物车</div>
+          <div class="icon-header" @click="linkToCart()">购物车</div>
         </div>
-        <div class="jiarugouwuche">加入购物车</div>
+        <div class="jiarugouwuche" @click="addToCart(info)">加入购物车</div>
     </div>
   
   </div>
@@ -62,6 +62,7 @@
 <script>
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
   import axios from 'axios'
+  import { mapActions} from 'vuex'
   
   export default {
     name:'products',
@@ -107,11 +108,38 @@
       this.getData()
     },
     methods:{
+      ...mapActions([
+        "addProductToCart"
+      ]),
       linkTo(path){
         this.$router.push(path)
       },
+      linkToCart(){
+        this.$router.push('/index')
+        this.$store.commit('changeFooterTab',3)
+      },
       linkBack(){
         this.$router.go(-1)
+      },
+      addToCart(info){
+        let cartInfo = {}
+        cartInfo.price = info.money
+        cartInfo.title = info.chouse.replace(/x1/,'')
+        cartInfo.id = info.id
+        cartInfo.imgSrc = info.banner[0]
+        this.$store.dispatch('addProductToCart',cartInfo)
+        // let idExist  = this.$store.state.cart.added.find((info)=>{
+        //   return info.id == info.id   //es6 Array.find 返回满足提供的测试函数的第一个元素的值。否则返回undefined
+        // })
+        // if(!idExist){
+
+        //   this.cartInfo.num = 1
+
+        //   this.$store.commit('addToCart',this.cartInfo)
+        //   this.cartInfo = [] 
+        // }
+        
+        
       },
       getData(){
         this.loaded = false
@@ -126,7 +154,7 @@
             this.info = eval('(' + response.data  + ')') //拿到的是字符串,将字符串转化为对象
             //意外的是JSON.parse不能用  很奇怪
             this.loaded = true
-            console.log( response.data)
+            // console.log( response.data)
           })
           .catch(error=>{
             this.$router.replace('/error/404')
@@ -147,6 +175,8 @@
   }
   .prod-main{
     margin:0.3rem;
+    margin-top:0.4rem;
+    margin-bottom: 0.5rem;
     text-align: left;
     font-size:0.25rem;
   }
