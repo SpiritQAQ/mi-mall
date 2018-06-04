@@ -17,9 +17,9 @@
             <div class="item-price"><span>￥</span>{{item.info.price}}</div>
           </div>
           <div class="item-num">
-            <div class="num-">-</div>
+            <div class="num-" @click="reduceItemNum(item.info)">-</div>
             <div class='num'>{{item.num}}</div>
-            <div class="num+">+</div>
+            <div class="num+" @click="incrementItemNum(item.info)">+</div>
           </div>
 
         </div>
@@ -36,13 +36,19 @@ export default {
       
     }
   },
-  watch:{
-
+  methods:{
+    incrementItemNum(info){
+      this.$store.commit('incrementItemNum',info)
+    },
+    reduceItemNum(info){
+      this.$store.commit('reduceItemNum',info)
+    }
   },
   computed:{
     cart(){
       return this.$store.state.cart.items
-    }
+    },
+
   }
   
 }
@@ -79,7 +85,7 @@ export default {
       .item-img{
         float:left;
         width:1.2rem;
-        img{width:100%;border:1px solid #ccc}
+        img{width:100%;border:1px solid #ccc;border-radius: 0.05rem;}
         
       }
       .item-info{
@@ -136,7 +142,7 @@ export default {
     display: inline-block;
     border-radius: 0.35rem;
     // font-size:0.35rem;
-    vertical-align:middle;
+    // vertical-align:middle;
     // padding:0.2rem;
     height:0.41rem;
     width: 0.41rem;
@@ -147,7 +153,7 @@ export default {
   .check-box+ label{
     display: inline-block;
     border-radius: 0.35rem;
-    vertical-align:middle;
+    // vertical-align:middle;
     height:0.35rem;
     width: 0.35rem;
     border:0.03rem solid #ccc;

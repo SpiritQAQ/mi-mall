@@ -1130,7 +1130,8 @@ export default new Vuex.Store({
       state.cart.items.push({
         id,
         info,
-        num:1
+        num:1,
+        checkBoxStatus:false
       })
       console.log(state.cart.items)
     },
@@ -1141,6 +1142,14 @@ export default new Vuex.Store({
       const cartItem = state.cart.items.find(item => item.id === id)
       cartItem.num++
     },
+    reduceItemNum(state,{ id }){
+      const cartItem = state.cart.items.find(item => item.id === id)
+      if(cartItem.num <= 1){
+        cartItem.num = 1
+      }else{
+        cartItem.num--
+      }
+    }
 
   },
   modules: {
