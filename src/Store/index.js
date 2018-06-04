@@ -1099,12 +1099,21 @@ export default new Vuex.Store({
     footerTab : 1,
     cart:{
       items:[],
-      checkoutStatus:null
+      checkoutStatus:null,
     }
   },
   getters:{
     cartLength:state=>{
-      return state.added.length
+      return state.cart.items.length
+    },
+    cartTotalPrice: (state, getters) => {
+    let total = 0
+    for(let i=0;i<state.cart.items.length;i++){
+      if(state.cart.items[i].checkBoxStatus){
+        total += state.cart.items[i].num*state.cart.items[i].info.price
+      }
+    }
+    return total
     }
   },
   actions:{
@@ -1148,6 +1157,14 @@ export default new Vuex.Store({
         cartItem.num = 1
       }else{
         cartItem.num--
+      }
+    },
+    checkBoxToggle(state,{ id }){
+      const cartItem = state.cart.items.find(item => item.id === id)
+      if(cartItem.checkBoxStatus){
+        cartItem.checkBoxStatus = false    
+      }else{
+        cartItem.checkBoxStatus = true
       }
     }
 
