@@ -2,13 +2,15 @@
   <div class="gouwuche">
     <div class="g-header-container">
       <div class="g-header">购物车</div>
-      <div class="g-editor">编辑</div>
+      <div class="g-editor" v-show="!editorStatus" @click="editorStatus=true">编辑</div>
+      <div class="g-editor" v-show="editorStatus" @click="editorStatus=false">完成</div>
     </div>
     <div class="g-content">   
       <div class="cart-list" v-for="item in cart">
         <div class="cart-item clearfix">
           <div class="choose-btn">
-            <input type="checkbox" v-bind:checked="item.checkBoxStatus === true" class="check-box" v-bind:id="item.info.id">
+            <input type="checkbox" v-bind:checked="item.checkBoxStatus === true" 
+            @click="checkBoxToggle(item.info)" class="check-box" v-bind:id="item.info.id">
             <label v-bind:for="item.info.id"></label>
           </div>
           <div class="item-img"><img v-bind:src="item.info.imgSrc.src" alt=""></div>
@@ -25,6 +27,30 @@
         </div>
       </div>
     </div>
+    <div class="g-footer">
+      <div class="g-footer-tab g-footer-tab1 clearfix" v-show="!editorStatus">
+        <div class="quanxuan">
+          <input type="checkbox" class="check-box" id="quanxuan1">
+          <label for="quanxuan1"></label>
+          <span>全选</span>
+        </div>
+        <div class="heji">
+          <span>合计:</span><div class="heji-price"><span>￥</span>123</div>
+        </div>
+        <div class="g-pay">结算({{}})</div>
+      </div>
+      <div class="g-footer-tab g-footer-tab2 clearfix" v-show="editorStatus">
+        <div class="quanxuan">
+          <input type="checkbox" class="check-box" id="quanxuan2">
+          <label for="quanxuan2"></label>
+          <span>全选</span>
+        </div>
+        <div class="clearfix">
+          <div class="shoucang">移入收藏</div>
+          <div class="g-delete">删除</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -33,7 +59,7 @@ export default {
   name:"Gouwuche",
   data(){
     return {
-      
+      editorStatus:false
     }
   },
   methods:{
@@ -42,6 +68,9 @@ export default {
     },
     reduceItemNum(info){
       this.$store.commit('reduceItemNum',info)
+    },
+    checkBoxToggle(info){
+      this.$store.commit("checkBoxToggle",info)
     }
   },
   computed:{
@@ -55,7 +84,7 @@ export default {
 </script>
 
 <style lang="scss">
- 
+  .gouwuche{height:100%;}
   .g-header-container{
     position: relative;
     border-bottom: 1px solid #ccc;
@@ -126,6 +155,72 @@ export default {
           font-size:0.28rem;
           line-height:0.32rem;
         }
+      }
+    }
+  }
+  .g-footer{
+    position:fixed;
+
+    bottom:1rem;
+    width:100%;
+    height:0.8rem;
+    border-top:0.01rem solid #ccc;
+    .g-footer-tab{
+      height:100%;
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+      .quanxuan{
+        width:1.5rem;
+        font-size:0.25rem;
+        padding-top:0.2rem;
+        span{position: relative;top:-0.1rem;}
+      }
+      .heji{
+        margin-left:2.5rem;
+        margin-right:0.7rem;
+        position:relative;
+        font-size:0.28rem;
+        padding-top:0.3rem;
+        .heji-price{
+          position:absolute;
+          top:0.3rem;
+          left:0.6rem;
+          color:#FF6b00;
+          span{
+            font-size:0.2rem;
+            position: relative;
+            top:-0.07rem;
+            left:0.04rem;
+          }
+        }
+      }
+      .g-pay{
+        width:2.1rem;
+        height:100%;
+        background-color:#FF6b00;
+        font-size:0.3rem;
+        color:#fff;
+        line-height:0.8rem;
+      }
+      .shoucang{
+        background-color: #ccc;
+        float:left;
+        height:100%;
+        width:2.2rem;
+        line-height:0.8rem;
+        font-size:0.26rem;
+        color:#fff
+      }
+      .g-delete{
+        float:right;
+        height:100%;
+        width:2.2rem;
+        line-height:0.8rem;
+        font-size:0.26rem;
+        background-color:rgb(233, 24, 24);
+        margin-right:-1.6rem;
+        color:#eee
       }
     }
   }
