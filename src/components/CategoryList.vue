@@ -105,7 +105,7 @@ export default {
     }
   },
   watch:{
-
+    
   },
   computed:{
     categoryList(){
