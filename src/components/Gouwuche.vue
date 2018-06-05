@@ -35,9 +35,9 @@
           <span>全选</span>
         </div>
         <div class="heji">
-          <span>合计:</span><div class="heji-price"><span>￥</span>123</div>
+          <span>合计:</span><div class="heji-price"><span>￥</span>{{cartTotalPrice}}</div>
         </div>
-        <div class="g-pay">结算({{}})</div>
+        <div class="g-pay">结算({{cartLength}})</div>
       </div>
       <div class="g-footer-tab g-footer-tab2 clearfix" v-show="editorStatus">
         <div class="quanxuan">
@@ -71,12 +71,21 @@ export default {
     },
     checkBoxToggle(info){
       this.$store.commit("checkBoxToggle",info)
+    },
+    checkBoxAllTo(status){
+      this.$store.commit("checkBoxAllTo",status)
     }
   },
   computed:{
     cart(){
       return this.$store.state.cart.items
     },
+    cartLength(){
+      return this.$store.getters.cartLength
+    },
+    cartTotalPrice(){
+      return this.$store.getters.cartTotalPrice
+    }
 
   }
   
@@ -177,8 +186,8 @@ export default {
         span{position: relative;top:-0.1rem;}
       }
       .heji{
-        margin-left:2.5rem;
-        margin-right:0.7rem;
+        margin-left:2rem;
+        margin-right:1.2rem;
         position:relative;
         font-size:0.28rem;
         padding-top:0.3rem;

@@ -1100,6 +1100,7 @@ export default new Vuex.Store({
     cart:{
       items:[],
       checkoutStatus:null,
+      checkBoxLeader:false,
     }
   },
   getters:{
@@ -1166,7 +1167,8 @@ export default new Vuex.Store({
       }else{
         cartItem.checkBoxStatus = true
       }
-    }
+    },
+    checkBoxAll
 
   },
   modules: {
