@@ -4,7 +4,7 @@
 
     <PageMain ref="pageMain" v-bind:content-height = "contentHeight" v-show="footerTab==1"/>
     <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-show="footerTab ==2"/> 
-    <Gouwuche ref='gouwuche' v-show="footerTab==3"/>
+    <Gouwuche ref='gouwuche' v-bind:cartContentHeight="cartContentHeight" v-show="footerTab==3"/>
     <UserPage ref ="userPage" v-show="footerTab==4" v-bind:noFooterHeight = "noFooterHeight"/>
     <!-- <router-view></router-view> -->
     <Footer ref="footer"/>
@@ -31,7 +31,8 @@ export default {
     return {
       contentHeight : 0,
       categoryListHeight:0,
-      noFooterHeight:0
+      noFooterHeight:0,
+      cartContentHeight:0
     }
   },
   computed:{
@@ -41,14 +42,18 @@ export default {
   },
   methods:{
     getHeight : function (){
+      let appHeight = this.$el.offsetHeight
       let pageMainHeight =this.$refs.pageMain.$el.offsetHeight
       let footerHeight = this.$refs.footer.$el.offsetHeight
       let searchHeight = this.$refs.pageMain.$refs.topBar.$el.offsetHeight
       let mainTabHeight = this.$refs.pageMain.$refs.mainTab.offsetHeight
       let cateHeight = this.$refs.categoryList.$el.offsetHeight
+      let cateSearchHeight = this.$refs.categoryList.$refs.catTopBar.offsetHeight
+      this.cartContentHeight = appHeight - footerHeight 
+      -this.$refs.gouwuche.$refs.gHeader.offsetHeight-this.$refs.gouwuche.$refs.gFooter.offsetHeight  
       this.contentHeight = pageMainHeight - footerHeight - searchHeight - mainTabHeight
-      this.categoryListHeight = cateHeight - footerHeight - searchHeight 
-      this.noFooterHeight = pageMainHeight - footerHeight
+      this.categoryListHeight = appHeight - footerHeight - cateSearchHeight 
+      this.noFooterHeight = appHeight - footerHeight
     },
     
     
@@ -64,10 +69,10 @@ export default {
       //这里设置的比例是100px=1rem,例如，宽度为100px时，可以直接写成1rem。
     }
   },
-  updated(){
-    this.fnResize()
-    this.getHeight()
-  },
+  // updated(){
+  //   this.fnResize()
+  //   this.getHeight()
+  // },
   mounted(){
     let _this = this
     this.fnResize()

@@ -1,6 +1,6 @@
 <template>
   <div class="category-list">
-    <div class="top-bar" style="border-bottom:1px solid #ccc;">
+    <div class="top-bar" style="border-bottom:1px solid #ccc;" ref = "catTopBar">
       <div class="search-box">
         <div class="input-box" style="width:90%;">
           <svg class="icon icon-search" aria-hidden="true">
@@ -59,7 +59,7 @@ export default {
           observe:true,
           observeParents:true,
           // slidesPreView:2,
-          spaceBetween:"-25%",
+          spaceBetween:"-30%",
 //           onSlideChangeEnd: function(swiper){ 
 // 　　　      swiper.update(); 
 //           }

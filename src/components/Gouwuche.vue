@@ -1,11 +1,11 @@
 <template>
   <div class="gouwuche">
-    <div class="g-header-container">
+    <div class="g-header-container" ref="gHeader">
       <div class="g-header">购物车</div>
       <div class="g-editor" v-show="!editorStatus" @click="editorStatus=true">编辑</div>
       <div class="g-editor" v-show="editorStatus" @click="editorStatus=false">完成</div>
     </div>
-    <div class="g-content">   
+    <div class="g-content" v-bind:style=" { height: `${cartContentHeight}px`}">   
       <div class="cart-list" v-for="item in cart">
         <div class="cart-item clearfix">
           <div class="choose-btn">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="g-footer">
+    <div class="g-footer" ref="gFooter">
       <div class="g-footer-tab g-footer-tab1 clearfix" v-show="!editorStatus">
         <div class="quanxuan">
           <input type="checkbox" class="check-box" id="quanxuan1"   @click="checkBoxLeaderToggle()">
@@ -57,6 +57,7 @@
 <script>
 export default {
   name:"Gouwuche",
+  props:["cartContentHeight"],
   data(){
     return {
       editorStatus:false
@@ -225,7 +226,7 @@ export default {
         background-color: #ccc;
         float:left;
         height:100%;
-        width:2.2rem;
+        width:2.1rem;
         line-height:0.8rem;
         font-size:0.26rem;
         color:#fff
@@ -233,11 +234,11 @@ export default {
       .g-delete{
         float:right;
         height:100%;
-        width:2.2rem;
+        width:2.1rem;
         line-height:0.8rem;
         font-size:0.26rem;
         background-color:rgb(233, 24, 24);
-        margin-right:-1.6rem;
+        margin-right:-1.8rem;
         color:#eee
       }
     }
