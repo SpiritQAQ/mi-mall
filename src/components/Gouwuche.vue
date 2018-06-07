@@ -5,7 +5,11 @@
       <div class="g-editor" v-show="!editorStatus" @click="editorStatus=true">编辑</div>
       <div class="g-editor" v-show="editorStatus" @click="editorStatus=false">完成</div>
     </div>
-    <div class="g-content" v-bind:style=" { height: `${cartContentHeight}px`}">   
+    <div class="g-content" v-bind:style=" { height: `${cartContentHeight}px`}">
+      <div class="no-item" v-show="cart.length == 0">
+        <div >购物车还是空的</div>
+        <div class="toPageMain" @click="toPageMain()">去逛逛</div>  
+      </div>   
       <div class="cart-list" v-for="item in cart">
         <div class="cart-item clearfix">
           <div class="choose-btn">
@@ -23,11 +27,40 @@
             <div class='num'>{{item.num}}</div>
             <div class="numadd" @click="incrementItemNum(item.info)">+</div>
           </div>
-
         </div>
       </div>
+      <div class="guess-like">
+        <div class="guess-header">
+          <div>猜你喜欢</div>
+          <div class="cool">每一款都酷到没朋友</div>
+        </div>
+        <div class="img-row clearfix">
+          <div class="page1-goods" v-for="item in goodsOfPage1">
+            <a v-bind:href="'#'+item.href"><img v-lazy="item.src" alt=""></a>
+            <h4>{{item.title}}</h4>
+            <p>{{item.con}}</p>
+            <div>￥{{item.money}}</div>
+          </div>
+        </div>
+        <div class="img-row clearfix">
+          <div class="page1-goods" v-for="item in goodsOfPage1">
+            <a v-bind:href="'#'+item.href"><img v-lazy="item.src" alt=""></a>
+            <h4>{{item.title}}</h4>
+            <p>{{item.con}}</p>
+            <div>￥{{item.money}}</div>
+          </div>
+        </div>
+        <div class="img-row clearfix">
+          <div class="page1-goods" v-for="item in goodsOfPage1">
+            <a v-bind:href="'#'+item.href"><img v-lazy="item.src" alt=""></a>
+            <h4>{{item.title}}</h4>
+            <p>{{item.con}}</p>
+            <div>￥{{item.money}}</div>
+          </div>
+        </div>                   
+      </div>
     </div>
-    <div class="g-footer" ref="gFooter">
+    <div class="g-footer" ref="gFooter" v-show="cart.length>0">
       <div class="g-footer-tab g-footer-tab1 clearfix" v-show="!editorStatus">
         <div class="quanxuan">
           <input type="checkbox" class="check-box" id="quanxuan1"   @click="checkBoxLeaderToggle()">
@@ -37,7 +70,7 @@
         <div class="heji">
           <span>合计:</span><div class="heji-price"><span>￥</span>{{cartTotalPrice}}</div>
         </div>
-        <div class="g-pay">结算({{cartLength}})</div>
+        <div class="g-pay">结算({{cartCheckedLength}})</div>
       </div>
       <div class="g-footer-tab g-footer-tab2 clearfix" v-show="editorStatus">
         <div class="quanxuan">
@@ -81,6 +114,9 @@ export default {
     },
     deleteCheckedItem(){
       this.$store.commit("deleteCheckedItem")
+    },
+    toPageMain(){
+      this.$store.commit("changeFooterTab",1)
     }
   },
   computed:{
@@ -90,8 +126,14 @@ export default {
     cartLength(){
       return this.$store.getters.cartLength
     },
+    cartCheckedLength(){
+      return this.$store.getters.cartCheckedLength
+    },
     cartTotalPrice(){
       return this.$store.getters.cartTotalPrice
+    },
+    goodsOfPage1(){
+      return this.$store.state.goodsOfPage1
     }
 
   }
@@ -107,6 +149,7 @@ export default {
     padding:0.3rem 0 0.2rem;
     .g-header{
       font-size:0.36rem;
+
     }
     .g-editor{
       font-size:0.3rem;
@@ -115,6 +158,10 @@ export default {
       top:0.35rem;
       color:#555
     }
+  }
+  .g-content{
+    overflow: scroll;
+    z-index:1;
   }
   .cart-list{
     .cart-item{
@@ -179,7 +226,8 @@ export default {
   }
   .g-footer{
     position:fixed;
-
+    z-index:2;
+    background-color: #fff;
     bottom:1rem;
     width:100%;
     height:0.8rem;
@@ -241,6 +289,52 @@ export default {
         margin-right:-1.8rem;
         color:#eee
       }
+    }
+  }
+  .no-item{
+    background-color: #eee;
+    position: relative;
+    :first-child{
+      color:#666;
+      height:0.8rem;
+      line-height: 0.8rem;
+      margin-left:-0.5rem;
+    }
+    .toPageMain{
+      padding:0.1rem;
+      border:0.01rem solid #555;
+      color:#555; 
+      position:absolute;
+      top:0.15rem;
+      right:2rem;
+    }
+  }
+  .guess-like{
+    .guess-header{
+      background-color: #eee;
+      padding:0.2rem;
+      :last-child{
+        color:#555;
+        position:relative
+      }
+      :last-child:after,:last-child:before{
+        position: absolute;
+        right: 0.8rem;
+        top: 0.15rem;
+        width: 1.4rem;
+        background-color: #999;
+        height: 0.02rem;
+        content: '';
+      }
+      :last-child:before{
+        left:0.8rem;
+      }
+      :first-child{
+        color :#FF6b00;
+        font-size : 0.3rem;
+        padding-bottom:0.1rem;
+      }
+      
     }
   }
   .clearfix::after{

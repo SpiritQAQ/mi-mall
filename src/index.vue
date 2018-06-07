@@ -69,10 +69,10 @@ export default {
       //这里设置的比例是100px=1rem,例如，宽度为100px时，可以直接写成1rem。
     }
   },
-  // updated(){
-  //   this.fnResize()
-  //   this.getHeight()
-  // },
+  updated(){
+    this.fnResize()
+    this.getHeight()
+  },
   mounted(){
     let _this = this
     this.fnResize()

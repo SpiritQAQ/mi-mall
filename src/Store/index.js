@@ -1107,6 +1107,15 @@ export default new Vuex.Store({
     cartLength:state=>{
       return state.cart.items.length
     },
+    cartCheckedLength:(state)=>{
+      let the = 0 
+      for(let i=0;i<state.cart.items.length;i++){
+        if(state.cart.items[i].checkBoxStatus){
+          the+=1
+        }
+      }
+      return the
+    },
     cartTotalPrice: (state, getters) => {
     let total = 0
     for(let i=0;i<state.cart.items.length;i++){
