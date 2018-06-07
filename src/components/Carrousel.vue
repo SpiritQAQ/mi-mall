@@ -31,7 +31,7 @@
       </div>
       <div class="img-row clear-fix">
         <div class="page1-goods" v-for="item in goodsOfPage1">
-          <a v-bind:href="item.href"><img v-lazy="item.src" alt=""></a>
+          <a v-bind:href="'#'+item.href"><img v-lazy="item.src" alt=""></a>
           <h4>{{item.title}}</h4>
           <p>{{item.con}}</p>
           <div>￥{{item.money}}</div>
