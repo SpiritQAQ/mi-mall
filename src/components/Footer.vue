@@ -70,7 +70,7 @@
     left:0;
     width:100%;
     height: 1rem;
-    border-top:1px solid #aaa;
+    border-top:0.01rem solid #aaa;
     box-shadow: 0px 0px 10px 1px #ccc;
     display: flex;
     justify-content: space-around;

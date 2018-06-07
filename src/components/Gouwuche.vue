@@ -103,7 +103,7 @@ export default {
   .gouwuche{height:100%;}
   .g-header-container{
     position: relative;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.01rem solid #ccc;
     padding:0.3rem 0 0.2rem;
     .g-header{
       font-size:0.36rem;
@@ -120,7 +120,7 @@ export default {
     .cart-item{
       // height:1.5rem;
       padding:0.2rem 0;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 0.01rem solid #ddd;
       position:relative;
       .choose-btn{
         float:left;
@@ -130,7 +130,7 @@ export default {
       .item-img{
         float:left;
         width:1.2rem;
-        img{width:100%;border:1px solid #ccc;border-radius: 0.05rem;}
+        img{width:100%;border:0.01rem solid #ccc;border-radius: 0.05rem;}
         
       }
       .item-info{
