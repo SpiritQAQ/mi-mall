@@ -41,13 +41,13 @@
       </div>
       <div class="g-footer-tab g-footer-tab2 clearfix" v-show="editorStatus">
         <div class="quanxuan">
-          <input type="checkbox" class="check-box" id="quanxuan2">
+          <input type="checkbox" class="check-box" id="quanxuan2"   @click="checkBoxLeaderToggle()">
           <label for="quanxuan2"></label>
           <span>全选</span>
         </div>
         <div class="clearfix">
           <div class="shoucang">移入收藏</div>
-          <div class="g-delete">删除</div>
+          <div class="g-delete" @click ="deleteCheckedItem()">删除</div>
         </div>
       </div>
     </div>
@@ -78,6 +78,9 @@ export default {
     checkBoxLeaderToggle(){
       this.$store.dispatch("checkBoxAllChange")
     },
+    deleteCheckedItem(){
+      this.$store.commit("deleteCheckedItem")
+    }
   },
   computed:{
     cart(){

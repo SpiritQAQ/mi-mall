@@ -1173,18 +1173,21 @@ export default new Vuex.Store({
     },
     checkBoxAllCheck(state){
       for(let i=0;i<state.cart.items.length;i++){
-        console.log(state.cart.items[i].checkBoxStatus)
         state.cart.items[i].checkBoxStatus = state.cart.checkBoxLeader
-        console.log(state.cart.items[i])
-
       }
-      
     },
     checkBoxLeaderToggle(state){
       if(state.cart.checkBoxLeader){
         state.cart.checkBoxLeader = false
       }else{
         state.cart.checkBoxLeader = true
+      }
+    },
+    deleteCheckedItem(state){
+      for(let i=0;i<state.cart.items.length;i++){
+       if(state.cart.items[i].checkBoxStatus == true){
+        state.cart.items.splice(i,1)
+       } 
       }
     }
 
