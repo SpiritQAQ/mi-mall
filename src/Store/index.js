@@ -1126,7 +1126,10 @@ export default new Vuex.Store({
       } else {
         commit("incrementItemNum", cartItem)
       }
-
+    },
+    checkBoxAllChange({state,commit}){
+      commit("checkBoxLeaderToggle")
+      commit("checkBoxAllCheck")
     }
   },
   mutations:{
@@ -1143,7 +1146,7 @@ export default new Vuex.Store({
         num:1,
         checkBoxStatus:false
       })
-      console.log(state.cart.items)
+      // console.log(state.cart.items)
     },
     setCartItems(state,{ items }){
       state.cart.items = items
@@ -1168,7 +1171,23 @@ export default new Vuex.Store({
         cartItem.checkBoxStatus = true
       }
     },
-    checkBoxAll
+    checkBoxAllCheck(state){
+      for(let i=0;i<state.cart.items.length;i++){
+        console.log(state.cart.items[i].checkBoxStatus)
+        state.cart.items[i].checkBoxStatus = state.cart.checkBoxLeader
+        console.log(state.cart.items[i])
+
+      }
+      
+    },
+    checkBoxLeaderToggle(state){
+      if(state.cart.checkBoxLeader){
+        state.cart.checkBoxLeader = false
+      }else{
+        state.cart.checkBoxLeader = true
+      }
+    }
+
 
   },
   modules: {

@@ -21,7 +21,7 @@
           <div class="item-num">
             <div class="num-" @click="reduceItemNum(item.info)">-</div>
             <div class='num'>{{item.num}}</div>
-            <div class="num+" @click="incrementItemNum(item.info)">+</div>
+            <div class="numadd" @click="incrementItemNum(item.info)">+</div>
           </div>
 
         </div>
@@ -30,9 +30,9 @@
     <div class="g-footer">
       <div class="g-footer-tab g-footer-tab1 clearfix" v-show="!editorStatus">
         <div class="quanxuan">
-          <input type="checkbox" class="check-box" id="quanxuan1">
+          <input type="checkbox" class="check-box" id="quanxuan1"   @click="checkBoxLeaderToggle()">
           <label for="quanxuan1"></label>
-          <span>全选</span>
+          <span >全选</span>
         </div>
         <div class="heji">
           <span>合计:</span><div class="heji-price"><span>￥</span>{{cartTotalPrice}}</div>
@@ -74,7 +74,10 @@ export default {
     },
     checkBoxAllTo(status){
       this.$store.commit("checkBoxAllTo",status)
-    }
+    },
+    checkBoxLeaderToggle(){
+      this.$store.dispatch("checkBoxAllChange")
+    },
   },
   computed:{
     cart(){
@@ -156,6 +159,9 @@ export default {
           font-size:0.3rem;
           line-height:0.3rem;
           border:0.01rem solid #aaa;
+        }
+        .numadd{
+          line-height:0.35rem;
         }
         .num{
           border:0;
