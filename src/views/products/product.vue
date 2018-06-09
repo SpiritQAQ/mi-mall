@@ -123,8 +123,10 @@
       },
       addToCart(info){
         let cartInfo = {}
+        console.log(info)
         cartInfo.price = info.money
-        cartInfo.title = info.chouse.replace(/x1/,'')
+        // cartInfo.title = info.chouse.replace(/x1/,'')
+        cartInfo.title = info.title
         cartInfo.id = info.id
         cartInfo.imgSrc = info.banner[0]
         this.$store.dispatch('addProductToCart',cartInfo)

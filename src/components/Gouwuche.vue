@@ -17,9 +17,9 @@
             @click="checkBoxToggle(item.info)" class="check-box" v-bind:id="item.info.id">
             <label v-bind:for="item.info.id"></label>
           </div>
-          <div class="item-img"><img v-bind:src="item.info.imgSrc.src" alt=""></div>
+          <div class="item-img"><img v-bind:src="item.info.imgSrc.src" alt="" @click="pushToProd(item.info.id)"></div>
           <div class="item-info">
-            <div class="item-title">{{item.info.title}}</div>
+            <div class="item-title" @click="pushToProd(item.info.id)">{{item.info.title}}</div>
             <div class="item-price"><span>￥</span>{{item.info.price}}</div>
           </div>
           <div class="item-num">
@@ -117,7 +117,10 @@ export default {
     },
     toPageMain(){
       this.$store.commit("changeFooterTab",1)
-    }
+    },
+    pushToProd(ID){
+      this.$router.push({name:'products',params: { id: ID }})
+    }    
   },
   computed:{
     cart(){
@@ -134,7 +137,8 @@ export default {
     },
     goodsOfPage1(){
       return this.$store.state.goodsOfPage1
-    }
+    },
+
 
   }
   
