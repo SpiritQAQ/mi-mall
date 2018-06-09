@@ -7,14 +7,16 @@
         </svg>
       </div>   
     </div> 
-    <swiper :options="swiperOption" ref="mySwiper">
-      <swiper-slide v-for="item in info.banner" :key="item.haha" >
-        <div class='prod-imgCarr'>
-          <img v-bind:src="item.src" alt="">
-        </div>
-      </swiper-slide>
-       <div class="swiper-pagination" ref="pagination" slot="pagination"></div>
-    </swiper>
+    <div class="prod-imgs">
+      <swiper :options="swiperOption" ref="mySwiper">
+        <swiper-slide v-for="item in info.banner" :key="item.haha" >
+          <div class='prod-imgCarr'>
+            <img v-bind:src="item.src" alt="">
+          </div>
+        </swiper-slide>
+        <div class="swiper-pagination" ref="pagination" slot="pagination"></div>
+      </swiper>
+    </div>
     <div class="prod-main">
       <p class='prod-title'>{{info.title}}</p>
       <p class='prod-bigContent'>{{info.bigContent}}</p>
@@ -171,9 +173,10 @@
 <style lang='scss'>
   .prod-app{
     width:100%;
+    height:100%;
     img{width:100%;}
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
   }
   .prod-main{
     margin:0.3rem;
@@ -244,7 +247,9 @@
     position:fixed;
     bottom:0;
     left:0;
+    z-index:3;
     width:100%;
+    height:1rem;
     background: #fff;
     border-top:1px solid #aaa;
     box-shadow: 0px 0px 10px 1px #ccc;

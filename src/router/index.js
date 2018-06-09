@@ -54,10 +54,10 @@ export default new Router({
       path:"/products/:id",
       name:'products',
       props:true,
-      // component(resolve){
-      //   require(['@/views/products/product.vue'],resolve) //异步懒加载
-      // }
-      component:products
+      component(resolve){
+        require(['@/views/products/product.vue'],resolve) //异步懒加载
+      }
+      // component:products
     },
     {
       path:'/error/404',

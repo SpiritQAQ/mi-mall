@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-
+    <transition :name="transitionName">
       <keep-alive>
         <router-view ></router-view>
       </keep-alive>
-
+    </transition>
   </div>
 </template>
 
@@ -24,38 +24,18 @@ export default {
   name: 'App',
   components:{TopBar,Footer,PageMain,CategoryList,Gouwuche,UserPage},
   store,
-//   data(){
-//     return {
-//       contentHeight : 0,
-//       categoryListHeight:0,
-//       noFooterHeight:0
-//     }
-//   },
-//   computed:{
-//     footerTab(){
-//       return this.$store.state.footerTab
-//     }
-//   },
+  data(){
+    return {
+      transitionName:'slide-go'
+    }
+  },
   mounted(){
     let _this = this
     fnResize()
-    // getHeight()
-//     // console.log(this.contentHeight +'fa')
     window.onresize = function () {
       fnResize()
-//       getHeight()
+    
     }
-    // function getHeight(){
-    //   let pageMainHeight =_this.$refs.pageMain.$el.offsetHeight
-    //   let footerHeight = _this.$refs.footer.$el.offsetHeight
-    //   let searchHeight = _this.$refs.pageMain.$refs.topBar.$el.offsetHeight
-    //   let mainTabHeight = _this.$refs.pageMain.$refs.mainTab.offsetHeight
-    //   _this.contentHeight = pageMainHeight - footerHeight - searchHeight - mainTabHeight
-    //   _this.categoryListHeight = pageMainHeight - footerHeight - searchHeight 
-    //   _this.noFooterHeight = pageMainHeight - footerHeight
-    // }
-    
-    
     function fnResize() {
       var deviceWidth = document.documentElement.clientWidth || window.innerWidth
       if (deviceWidth >= 720) {
@@ -68,6 +48,13 @@ export default {
       //这里设置的比例是100px=1rem,例如，宽度为100px时，可以直接写成1rem。
     }
 
+  },
+  watch: {
+  '$route' (to, from) {
+    const toDepth = to.path.split('/').length
+    const fromDepth = from.path.split('/').length
+    this.transitionName = toDepth < fromDepth ? 'slide-back' : 'slide-go'
+  }
   }
 }
 </script>
@@ -78,17 +65,18 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+
   
   /* color: #2c3e50;
   margin-top: 60px; */
   font-size :.14rem;
   width:100%;
   /* max-width:10rem; */
-  height:100%;
+  height:100vh;
   overflow: auto;
   /* border:1px solid ; */
   /* color:#FF6B00; */
-  /* position: relative; */
+  position: relative;
 }
 .icon {
   width: 0.5rem; height: 0.5rem;
@@ -97,4 +85,26 @@ export default {
   overflow: hidden;
 }
 ::-webkit-scrollbar {display:none}
+.prod-app,#index{
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+.slide-go-enter-active,.slide-go-leave-active,.slide-back-enter-active,.slide-back-leave-active{
+  -webkit-transition: transform 0.4s cubic-bezier(.55,0,.1,1);
+  transition: transform 0.4s cubic-bezier(.55,0,.1,1);
+   /* transition-delay: 0.5s; */
+}
+.slide-back-leave-to,.slide-go-enter{
+  transform: translate3d(100%,0,0);
+}
+.slide-go-leave,.slide-go-enter-to,.slide-back-leave,.slide-back-enter-to{
+  transform:translate3d(0%,0,0)
+}
+.slide-back-enter,.slide-go-leave-to{
+  transform:translate3d(-100%,0,0)
+  
+}
+
 </style>
