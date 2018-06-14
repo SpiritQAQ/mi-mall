@@ -1,6 +1,6 @@
 <template>
   <div class="category-list">
-    <div class="top-bar" style="border-bottom:1px solid #ccc;" ref = "catTopBar">
+    <div class="top-bar" style="border-bottom:0.01rem solid #ccc;" ref = "catTopBar">
       <div class="search-box">
         <div class="input-box" style="width:90%;"  @click="linkToSearch()">
           <svg class="icon icon-search" aria-hidden="true">
@@ -142,7 +142,7 @@ export default {
     text-align: center;
     height:100%;
     width:20%;
-    border-right:1px solid #ccc;
+    border-right:0.01remsolid #ccc;
     top:0.75rem;
     overflow: scroll;
     z-index:5;
@@ -185,7 +185,7 @@ export default {
     right:1rem;
     top:0.15rem;
     width:1.2rem;
-    // border:1px solid ;
+    // border:0.01remsolid ;
     background-color: #ccc;
     height:0.02rem ;
     content:''
