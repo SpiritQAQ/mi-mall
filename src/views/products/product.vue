@@ -55,7 +55,7 @@
           </div>
           <div class="icon-header" @click="linkToCart()">
             购物车
-            <div class="showCartLength">
+            <div class="showCartLength" v-show="cartLength!==0">
               {{cartLength}}
             </div>
           </div>
@@ -288,8 +288,8 @@
         
         .showCartLength{
           position: absolute;
-          top:.1rem;
-          right:.35rem;
+          top:.05rem;
+          right:.45rem;
           width:0.3rem;
           height:0.3rem;
           line-height:0.33rem;

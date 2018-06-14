@@ -22,7 +22,12 @@
           <use xlink:href="#icon-gouwuche2"></use>
         </svg>        
       </div>
-      <div class="icon-header">购物车</div>
+      <div class="icon-header">
+        购物车
+        <div class="showCartLength" v-show="cartLength!==0">
+          {{cartLength}}
+        </div>
+        </div>
     </div>
     <div class="footer-item" @click="changeTo(4,'UserPage')" :class="{active:footerTab==4}">
       <div class="icon-box">
@@ -51,10 +56,13 @@
       },
     },
     computed:{
-        footerTab(){
+      footerTab(){
         return this.$store.state.footerTab
       
-    }
+      },
+      cartLength(){
+        return this.$store.getters.cartLength
+      }
 
 
     }
@@ -75,7 +83,20 @@
     display: flex;
     justify-content: space-around;
     .footer-item{
-      padding:.1rem
+      padding:.1rem;
+      position: relative;
+      .showCartLength{
+          position: absolute;
+          top:.04rem;
+          right:0rem;
+          width:0.3rem;
+          height:0.3rem;
+          line-height:0.33rem;
+          text-align: center;
+          background-color: #FF6b00;
+          border-radius: .3rem;
+          color:#fff
+        }
     }
     .icon-header{
       font-size:.22rem;
