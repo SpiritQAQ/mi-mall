@@ -29,16 +29,17 @@ export default {
       transitionName:'slide-go'
     }
   },
-  created(){
-    let cart =localStorage.getItem('cart')
-    console.log(cart)  
-    if(cart){
-      cart = JSON.parse(cart)
-    }else{
-      return 
-    }
-    this.$store.commit('initCart',cart)  
-  },
+  // created(){
+  //   let cart =localStorage.getItem('cart')
+  //   console.log(cart)  
+  //   console.log(123)
+  //   if(cart){
+  //     cart = JSON.parse(cart)
+  //   }else{
+  //     return 
+  //   }
+  //   this.$store.commit('initCart',cart)  
+  // },
   mounted(){
     let _this = this
     fnResize()

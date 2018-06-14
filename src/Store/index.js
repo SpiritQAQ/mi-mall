@@ -1142,10 +1142,10 @@ export default new Vuex.Store({
     }
   },
   mutations:{
-    initCart(state,payload){
-      Object.assign(state.cart, payload)
-      state.cart = payload
-    },
+    // initCart(state,payload){
+    //   Object.assign(state.cart, payload)
+    //   state.cart = payload
+    // },
     changeNavTab(state,val){
       state.navTab = val
     },
@@ -1159,7 +1159,7 @@ export default new Vuex.Store({
         num:1,
         checkBoxStatus:true
       })
-      localStorage.setItem('cart',JSON.stringify(state.cart)) //将购物车信息保存到localStorage
+      // localStorage.setItem('cart',JSON.stringify(state.cart)) //将购物车信息保存到localStorage
     },
     setCartItems(state,{ items }){
       state.cart.items = items
@@ -1167,7 +1167,7 @@ export default new Vuex.Store({
     incrementItemNum(state,{ id }){
       const cartItem = state.cart.items.find(item => item.id === id)
       cartItem.num++
-      localStorage.setItem('cart',JSON.stringify(state.cart)) //将购物车信息保存到localStorage      
+      // localStorage.setItem('cart',JSON.stringify(state.cart)) //将购物车信息保存到localStorage      
     },
     reduceItemNum(state,{ id }){
       const cartItem = state.cart.items.find(item => item.id === id)
@@ -1176,7 +1176,7 @@ export default new Vuex.Store({
       }else{
         cartItem.num--
       }
-      localStorage.setItem('cart',JSON.stringify(state.cart)) //将购物车信息保存到localStorage
+      // localStorage.setItem('cart',JSON.stringify(state.cart)) //将购物车信息保存到localStorage
       
     },
     checkBoxToggle(state,{ id }){
@@ -1205,7 +1205,7 @@ export default new Vuex.Store({
         state.cart.items.splice(i,1)
        } 
       }
-      localStorage.setItem('cart',JSON.stringify(state.cart)) //将购物车信息保存到localStorage
+      // localStorage.setItem('cart',JSON.stringify(state.cart)) //将购物车信息保存到localStorage
       
     }
 
