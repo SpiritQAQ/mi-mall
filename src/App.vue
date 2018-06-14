@@ -72,6 +72,7 @@ export default {
   font-size :.14rem;
   width:100%;
   /* max-width:10rem; */
+  /* min-width:320px; */
   height:100vh;
   overflow: auto;
   /* border:1px solid ; */
@@ -90,7 +91,7 @@ export default {
   top:0;
   left:0;
 }
-
+/* 路由跳转 */
 .slide-go-enter-active,.slide-go-leave-active,.slide-back-enter-active,.slide-back-leave-active{
   -webkit-transition: transform 0.4s cubic-bezier(.55,0,.1,1);
   transition: transform 0.4s cubic-bezier(.55,0,.1,1);

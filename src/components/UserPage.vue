@@ -1,6 +1,6 @@
 <template>
   <div class="user-page " v-bind:style="{height : noFooterHeight+'px'}">
-    <div class="u-header" ref="u-header">
+    <div class="u-header" ref="u-header" @click="pushToBuilding()">
         <div class="user-photo">
           <img src="http://oz3tayfme.bkt.clouddn.com/show.liluo.cc/normal-face.png" alt="">
         </div>
@@ -8,10 +8,10 @@
     </div>
     <div class="u-content">
       <div class="h-rows1 h-rows">
-        <div class="h-row1 h-row">
+        <div class="h-row1 h-row" @click="pushToBuilding()">
           <div class="h-row-name">我的订单</div><span class="quanbudingdan">全部订单</span>
         </div>
-        <div class="h-icons">
+        <div class="h-icons" @click="pushToBuilding()">
           <div class="h-icon">
             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-qianbao "></use></svg>
             <div>待付款</div>       
@@ -34,7 +34,7 @@
         <div class="h-img">
           <img src="//gdp.alicdn.com/imgextra/i4/1714128138/TB20yMYnkSWBuNjSszdXXbeSpXa-1714128138.jpg" alt="">
         </div>
-        <div class="h-rows">
+        <div class="h-rows" @click="pushToBuilding()">
           <div class="h-row">
             <div class="h-row-icon">
               <svg class="icon" aria-hidden="true">
@@ -66,7 +66,7 @@
             </div>
           </div>
         </div>
-        <div class="h-rows">
+        <div class="h-rows" @click="pushToBuilding()">
           <div class="h-row">
             <div class="h-row-icon">
               <svg class="icon" aria-hidden="true">
@@ -97,7 +97,7 @@
               更多功能
             </div></div>          
         </div>
-        <div class="h-rows">
+        <div class="h-rows" @click="pushToBuilding()">
           <div class="h-row h-row-noborder">
             <div class="h-row-icon">
               <svg class="icon" aria-hidden="true">
@@ -121,6 +121,11 @@ export default {
   name:"UserPage",
   props:["noFooterHeight"],
   mounted(){
+  },
+  methods:{
+    pushToBuilding(){
+      this.$router.push('/error/building')
+    }
   }
 }
 </script>

@@ -7,6 +7,7 @@ import Gouwuche from "@/components/Gouwuche"
 import UserPage from "@/components/UserPage"
 import error404 from "@/views/error/404"
 import products from "@/views/products/product"
+import building from "@/views/error/building"
 import index from '@/index'
 
 Vue.use(Router)
@@ -66,6 +67,11 @@ export default new Router({
       //   require(['../views/error/404.vue'],resolve)
       // }
       component:error404
+    },
+    {
+      path:"/error/building",
+      name:'building',
+      component:building
     }
     
     
