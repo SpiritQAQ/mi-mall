@@ -140,7 +140,7 @@
         this.$router.go(-1)
       },
       clickAnimation(){
-        this.$refs.addAnimation.style.animation = " 1s addClick ease"
+        this.$refs.addAnimation.style.animation = " 0.5s addClick ease"
         // console.log(this.$refs.addAnimation)
       },
       addToCart(info){
