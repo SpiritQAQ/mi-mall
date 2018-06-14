@@ -53,9 +53,17 @@
               <use xlink:href="#icon-gouwuche2"></use>
             </svg>
           </div>
-          <div class="icon-header" @click="linkToCart()">购物车</div>
+          <div class="icon-header" @click="linkToCart()">
+            购物车
+            <div class="showCartLength">
+              {{cartLength}}
+            </div>
+          </div>
         </div>
-        <div class="jiarugouwuche" @click="addToCart(info)">加入购物车</div>
+        <div class="jiarugouwuche" @click="addToCart(info),clickAnimation()">
+          加入购物车
+          <div class="addAnimation" ref="addAnimation"></div>
+          </div>
     </div>
   
   </div>
@@ -109,6 +117,14 @@
     mounted(){
       this.getData()
     },
+    computed:{
+      cartCheckedLength(){
+        return this.$store.getters.cartCheckedLength 
+      },
+      cartLength(){
+        return this.$store.getters.cartLength
+      }
+    },
     methods:{
       ...mapActions([
         "addProductToCart"
@@ -123,15 +139,23 @@
       linkBack(){
         this.$router.go(-1)
       },
+      clickAnimation(){
+        this.$refs.addAnimation.style.animation = " 1s addClick ease"
+        // console.log(this.$refs.addAnimation)
+      },
       addToCart(info){
         let cartInfo = {}
-        console.log(info)
+        // console.log(info)
         cartInfo.price = info.money
         // cartInfo.title = info.chouse.replace(/x1/,'')
         cartInfo.title = info.title
         cartInfo.id = info.id
         cartInfo.imgSrc = info.banner[0]
         this.$store.dispatch('addProductToCart',cartInfo)
+        setTimeout(()=>{
+          this.$refs.addAnimation.style.animation = ""
+        },1000)
+        // console.log(this.$refs.addAnimation.style.animation)
         // let idExist  = this.$store.state.cart.added.find((info)=>{
         //   return info.id == info.id   //es6 Array.find 返回满足提供的测试函数的第一个元素的值。否则返回undefined
         // })
@@ -257,10 +281,23 @@
       width:25%;
       float: left;
       padding:0.1rem 0 ;
-
+      position: relative;
       .icon-header{
         font-size:0.25rem;
         padding-top:0.1rem;
+        
+        .showCartLength{
+          position: absolute;
+          top:.1rem;
+          right:.35rem;
+          width:0.3rem;
+          height:0.3rem;
+          line-height:0.33rem;
+          text-align: center;
+          background-color: #FF6b00;
+          border-radius: .3rem;
+          color:#fff
+        }
       }
       
     }
@@ -273,7 +310,26 @@
       color:#fff;
       font-size:.3rem;
       line-height:1rem;
+      .addAnimation{
+        position: absolute;
+        height:0.3rem;
+        width:0.3rem;
+        border-radius: .3rem;
+        background-color: #fff;
+        top:.4rem;
+        left:1.7rem;
+        opacity: 0;
+        // animation: 1s addClick ;
       }
+    }
+  }
+  .animating{
+    animation: 1s addClick ;
+  }
+  @keyframes addClick {
+    0%{top:0.4rem;left:1.7rem;opacity: 1;}
+    99%{top:0.1rem;left:-0.35rem;}
+    100%{top:0.4rem;left:1.7rem;opacity: 0.7;}
   }
   .back-btn{
     position: absolute;;

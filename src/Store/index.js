@@ -1153,7 +1153,7 @@ export default new Vuex.Store({
         id,
         info,
         num:1,
-        checkBoxStatus:false
+        checkBoxStatus:true
       })
       // console.log(state.cart.items)
     },
