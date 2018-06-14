@@ -29,6 +29,14 @@ export default {
       transitionName:'slide-go'
     }
   },
+  created(){
+    let cart =localStorage.getItem('cart')
+    console.log(cart)  
+    if(cart){
+      cart = JSON.parse(cart)
+    }
+    this.$store.commit('initCart',cart)  
+  },
   mounted(){
     let _this = this
     fnResize()
