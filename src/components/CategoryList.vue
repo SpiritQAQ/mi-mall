@@ -2,7 +2,7 @@
   <div class="category-list">
     <div class="top-bar" style="border-bottom:1px solid #ccc;" ref = "catTopBar">
       <div class="search-box">
-        <div class="input-box" style="width:90%;">
+        <div class="input-box" style="width:90%;"  @click="linkToSearch()">
           <svg class="icon icon-search" aria-hidden="true">
             <use xlink:href="#icon-search"></use>
           </svg>
@@ -102,6 +102,9 @@ export default {
       console.log(val)
       this.activeTab = val
       this.swiper.slideTo(val,500,false)
+    },
+    linkToSearch(){
+      this.$router.push("/search")
     }
   },
   watch:{

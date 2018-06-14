@@ -11,7 +11,7 @@
         <use xlink:href="#icon-xiaomi1"></use>
       </svg>
     </div>
-    <div class="input-box">
+    <div class="input-box" @click="linkToSearch()">
       <svg class="icon icon-search" aria-hidden="true">
         <use xlink:href="#icon-search"></use>
       </svg>
@@ -37,6 +37,11 @@
     },
     mounted(){
         this.loadingShow = true
+    },
+    methods:{
+      linkToSearch(){
+        this.$router.push("/search")
+      }
     }
   }
 </script>
