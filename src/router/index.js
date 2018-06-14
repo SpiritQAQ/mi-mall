@@ -8,6 +8,7 @@ import UserPage from "@/components/UserPage"
 import error404 from "@/views/error/404"
 import products from "@/views/products/product"
 import building from "@/views/error/building"
+import Search from "@/views/Search"
 import index from '@/index'
 
 Vue.use(Router)
@@ -72,6 +73,12 @@ export default new Router({
       path:"/error/building",
       name:'building',
       component:building
+    }
+    ,
+    {
+      path:"/search",
+      name: Search,
+      component:Search
     }
     
     

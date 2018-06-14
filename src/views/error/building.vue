@@ -34,7 +34,8 @@ export default {
 
 <style lang="scss">
   .building{
-    position:relative;
+    position: absolute;;
+    top:0;
     .b-back{
       // border:1px solid ;
       background-color: #CCC;
