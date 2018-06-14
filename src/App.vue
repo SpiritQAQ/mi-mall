@@ -34,6 +34,8 @@ export default {
     console.log(cart)  
     if(cart){
       cart = JSON.parse(cart)
+    }else{
+      return 
     }
     this.$store.commit('initCart',cart)  
   },

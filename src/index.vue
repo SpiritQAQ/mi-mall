@@ -6,7 +6,6 @@
     <CategoryList ref='categoryList' v-bind:categoryListHeight = "categoryListHeight" v-show="footerTab ==2"/> 
     <Gouwuche ref='gouwuche' v-bind:cartContentHeight="cartContentHeight" v-show="footerTab==3"/>
     <UserPage ref ="userPage" v-show="footerTab==4" v-bind:noFooterHeight = "noFooterHeight"/>
-    <!-- <router-view></router-view> -->
     <Footer ref="footer"/>
     
   </div>
