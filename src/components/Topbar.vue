@@ -40,6 +40,7 @@
     },
     methods:{
       linkToSearch(){
+        preventDefault();
         this.$router.push("/search")
       }
     }
